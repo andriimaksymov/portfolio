@@ -15,11 +15,11 @@ type CTAButtonProps = {
 
 const variants = {
   primary:
-    "border-cyan-300/50 bg-cyan-300 text-slate-950 shadow-glow hover:border-cyan-200 hover:bg-cyan-200",
+    "border-slate-950 bg-slate-950 text-white shadow-[0_14px_34px_rgba(15,23,42,0.2)] hover:border-slate-800 hover:bg-slate-800",
   secondary:
-    "border-white/[0.14] bg-white/[0.055] text-white hover:border-violet-300/[0.45] hover:bg-white/[0.09]",
+    "border-slate-200 bg-white text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.06)] hover:border-cyan-300 hover:bg-cyan-50/70",
   ghost:
-    "border-transparent bg-transparent text-slate-300 hover:border-white/[0.14] hover:bg-white/[0.06] hover:text-white",
+    "border-transparent bg-transparent text-slate-600 hover:border-slate-200 hover:bg-white/80 hover:text-slate-950",
 };
 
 export function CTAButton({
@@ -35,9 +35,9 @@ export function CTAButton({
 }: CTAButtonProps) {
   const classes = cn(
     "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-semibold outline-none transition duration-200",
-    "focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
+    "focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
     variants[variant],
-    disabled && "cursor-not-allowed border-white/10 bg-white/[0.035] text-slate-500 hover:border-white/10 hover:bg-white/[0.035] hover:text-slate-500",
+    disabled && "cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400 hover:border-slate-200 hover:bg-slate-100 hover:text-slate-400",
     className,
   );
 

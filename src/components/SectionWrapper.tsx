@@ -23,9 +23,9 @@ export function SectionWrapper({ id, eyebrow, title, description, children, clas
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55 }}
           >
-            {eyebrow && <p className="mb-3 text-sm font-semibold text-cyan-200">{eyebrow}</p>}
-            {title && <h2 className="text-3xl font-semibold text-white md:text-5xl">{title}</h2>}
-            {description && <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">{description}</p>}
+            {eyebrow && <p className="mb-3 text-sm font-semibold text-cyan-700">{eyebrow}</p>}
+            {title && <h2 className="text-3xl font-semibold text-slate-950 md:text-5xl">{title}</h2>}
+            {description && <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">{description}</p>}
           </motion.div>
         )}
         {children}
@@ -33,4 +33,3 @@ export function SectionWrapper({ id, eyebrow, title, description, children, clas
     </section>
   );
 }
-

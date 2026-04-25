@@ -10,7 +10,7 @@ export function SkillBadge({ label, compact }: SkillBadgeProps) {
   return (
     <motion.span
       className={cn(
-        "inline-flex items-center rounded-lg border border-white/10 bg-white/[0.055] font-medium text-slate-200 transition-colors duration-200 hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100",
+        "inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 font-medium text-slate-700 transition-colors duration-200 hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-800",
         compact ? "px-2.5 py-1.5 text-xs" : "px-3 py-2 text-sm",
       )}
       whileHover={{ y: -2, scale: 1.03 }}
@@ -20,4 +20,3 @@ export function SkillBadge({ label, compact }: SkillBadgeProps) {
     </motion.span>
   );
 }
-

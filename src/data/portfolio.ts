@@ -3,14 +3,13 @@ import type { Experience, Project, SkillGroup, ValueCard } from "../types";
 export const profile = {
   name: "Andrii Maksymov",
   title: "Senior Front-End React Developer",
-  location: "Remote / Ukraine",
   email: "andrii.maksymov.1@gmail.com",
   linkedin: "https://linkedin.com/in/maksymov-andrii/?skipRedirect=true",
   github: "https://github.com/andriimaksymov",
   headline:
     "I build scalable, high-performance React and Next.js products from architecture to production.",
   summary:
-    "Andrii specializes in React, Next.js, TypeScript, frontend architecture, performance optimization, SEO, CI/CD, and product-focused engineering.",
+    "I specialize in React, Next.js, TypeScript, frontend architecture, performance optimization, SEO, CI/CD, and product-focused engineering.",
 };
 
 export const experiences: Experience[] = [
@@ -20,19 +19,19 @@ export const experiences: Experience[] = [
     period: "May 2022 - Present",
     location: "Remote",
     highlights: [
-      "Architected and deployed multiple high-stakes greenfield platforms from scratch.",
-      "Defined foundational tech stacks using Next.js, TypeScript, React Query.",
-      "Designed scalable system architecture for long-term maintainability.",
-      "Implemented code review processes.",
-      "Mentored junior and mid-level developers.",
-      "Modernized legacy systems into performant, type-safe React architectures.",
-      "Reduced technical debt and maintenance overhead.",
-      "Owned frontend DevOps lifecycle.",
-      "Built CI/CD pipelines and automated deployment workflows.",
-      "Improved team velocity and time-to-production.",
-      "Optimized performance and implemented SEO strategies.",
-      "Delivered fast, user-centric applications with sub-second response times.",
-      "Improved organic traffic through technical SEO.",
+      "I architected and deployed multiple high-stakes greenfield platforms from scratch.",
+      "I defined foundational tech stacks using Next.js, TypeScript, and React Query.",
+      "I designed scalable system architecture for long-term maintainability.",
+      "I implemented code review processes.",
+      "I mentored junior and mid-level developers.",
+      "I modernized legacy systems into performant, type-safe React architectures.",
+      "I reduced technical debt and maintenance overhead.",
+      "I owned the frontend DevOps lifecycle.",
+      "I built CI/CD pipelines and automated deployment workflows.",
+      "I improved team velocity and time-to-production.",
+      "I optimized performance and implemented SEO strategies.",
+      "I delivered fast, user-centric applications with sub-second response times.",
+      "I improved organic traffic through technical SEO.",
     ],
   },
   {
@@ -41,13 +40,13 @@ export const experiences: Experience[] = [
     period: "October 2021 - April 2022",
     location: "Rivne",
     highlights: [
-      "Built high-performance React applications.",
-      "Designed complex state management using Redux and Context API.",
-      "Handled high-frequency data flows.",
-      "Worked with product managers and UX/UI designers.",
-      "Converted business requirements into scalable, accessible, user-centric features.",
-      "Applied clean code principles and architectural best practices.",
-      "Reduced technical debt and improved sustainability.",
+      "I built high-performance React applications.",
+      "I designed complex state management using Redux and Context API.",
+      "I handled high-frequency data flows.",
+      "I worked with product managers and UX/UI designers.",
+      "I converted business requirements into scalable, accessible, user-centric features.",
+      "I applied clean code principles and architectural best practices.",
+      "I reduced technical debt and improved sustainability.",
     ],
   },
   {
@@ -56,12 +55,12 @@ export const experiences: Experience[] = [
     period: "November 2020 - September 2021",
     location: "Rivne",
     highlights: [
-      "Developed interactive web applications with modern React component architecture.",
-      "Built responsive interfaces.",
-      "Integrated third-party APIs.",
-      "Worked with Stripe payment gateway.",
-      "Integrated external data services.",
-      "Improved platform functionality, data integrity, and transaction security.",
+      "I developed interactive web applications with modern React component architecture.",
+      "I built responsive interfaces.",
+      "I integrated third-party APIs.",
+      "I worked with Stripe payment gateway.",
+      "I integrated external data services.",
+      "I improved platform functionality, data integrity, and transaction security.",
     ],
   },
 ];
@@ -120,10 +119,10 @@ export const projects: Project[] = [
     description:
       "A full-stack pet management platform focused on health tracking, pet profiles, appointments, saved moments, locations, food ordering, and future AI-powered behavior analysis.",
     impact: [
-      "Architected and delivered an end-to-end health tracking system.",
-      "Designed database schema and relational integrity with PostgreSQL and Prisma.",
-      "Implemented modern Next.js server components.",
-      "Demonstrated full-lifecycle ownership from database design to frontend delivery.",
+      "I architected and delivered an end-to-end health tracking system.",
+      "I designed database schema and relational integrity with PostgreSQL and Prisma.",
+      "I implemented modern Next.js server components.",
+      "I owned the full lifecycle from database design to frontend delivery.",
     ],
   },
   {
@@ -133,10 +132,10 @@ export const projects: Project[] = [
     description:
       "An automated scoring tool that analyzes GitHub profiles and gives developers actionable feedback.",
     impact: [
-      "Built a developer-focused analytics product.",
-      "Integrated GitHub API.",
-      "Created automated profile analysis and scoring logic.",
-      "Demonstrated product thinking and commitment to the engineering community.",
+      "I built a developer-focused analytics product.",
+      "I integrated the GitHub API.",
+      "I created automated profile analysis and scoring logic.",
+      "I shaped the product around practical feedback for developers.",
     ],
   },
 ];
