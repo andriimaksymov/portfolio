@@ -114,6 +114,7 @@ export const skillGroups: SkillGroup[] = [
 export const projects: Project[] = [
   {
     name: "Pet Life",
+    link: "https://pet-life-sooty.vercel.app",
     subtitle: "Full-Stack Pet Management Platform",
     stack: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma ORM", "Shadcn UI"],
     description:
@@ -127,6 +128,7 @@ export const projects: Project[] = [
   },
   {
     name: "Portfolio Score",
+    link: "https://portfolio-score-frontend.vercel.app",
     subtitle: "Developer Portfolio Analytics Tool",
     stack: ["React", "Node.js", "GitHub API"],
     description:

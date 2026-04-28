@@ -13,6 +13,7 @@ export type SkillGroup = {
 
 export type Project = {
   name: string;
+  link: string;
   subtitle: string;
   stack: string[];
   description: string;
