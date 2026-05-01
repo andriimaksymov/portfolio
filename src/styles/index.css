@@ -12,35 +12,19 @@
 
 html {
   scroll-behavior: smooth;
-  background: #f7f9fc;
+  background: #ffffff;
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background: #f7f9fc;
+  background: #ffffff;
 }
 
 ::selection {
-  background: rgba(8, 145, 178, 0.18);
-  color: #0f172a;
-}
-
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, black 0%, black 62%, transparent 100%);
-}
-
-.bg-aurora {
-  background:
-    radial-gradient(circle at 12% 18%, rgba(8, 145, 178, 0.14), transparent 28%),
-    radial-gradient(circle at 86% 12%, rgba(124, 58, 237, 0.1), transparent 30%),
-    radial-gradient(circle at 76% 72%, rgba(5, 150, 105, 0.1), transparent 32%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 249, 252, 0.94));
+  background: rgba(99, 102, 241, 0.18);
+  color: #030213;
 }
 
 @media (prefers-reduced-motion: reduce) {

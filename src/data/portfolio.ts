@@ -7,9 +7,9 @@ export const profile = {
   linkedin: "https://linkedin.com/in/maksymov-andrii/?skipRedirect=true",
   github: "https://github.com/andriimaksymov",
   headline:
-    "I build scalable, high-performance React and Next.js products from architecture to production.",
+    "I design and build scalable React and Next.js systems that perform.",
   summary:
-    "I specialize in React, Next.js, TypeScript, frontend architecture, performance optimization, SEO, CI/CD, and product-focused engineering.",
+    "I own frontend architecture, performance, SEO, CI/CD, and product-focused delivery for modern React products.",
 };
 
 export const experiences: Experience[] = [
@@ -97,7 +97,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Tools",
-    skills: ["Git", "ESLint", "Figma", "Storybook"],
+    skills: ["Git", "ESLint", "Figma"],
   },
   {
     title: "Leadership",

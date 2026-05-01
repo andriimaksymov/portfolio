@@ -9,10 +9,10 @@ export function AnimatedCard({ className, interactive = true, children, ...props
   return (
     <motion.div
       className={cn(
-        "group relative overflow-hidden rounded-lg border border-slate-200/80 bg-white/85 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.08)] backdrop-blur-xl",
-        "before:absolute before:inset-0 before:-z-10 before:bg-[linear-gradient(135deg,rgba(8,145,178,0.08),rgba(124,58,237,0.06),rgba(5,150,105,0.06))] before:opacity-0 before:transition-opacity before:duration-500",
+        "group relative overflow-hidden rounded-lg border border-neutral-200/90 bg-white p-6 shadow-[0_18px_44px_rgba(3,2,19,0.05)]",
+        "before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,rgba(99,102,241,0.8),rgba(59,130,246,0.55),rgba(16,185,129,0.55))] before:opacity-0 before:transition-opacity before:duration-500",
         interactive &&
-          "transition-colors duration-300 hover:border-cyan-500/30 hover:bg-white hover:shadow-[0_24px_70px_rgba(15,23,42,0.12)] hover:before:opacity-100",
+          "transition duration-300 hover:border-neutral-300 hover:shadow-[0_24px_70px_rgba(3,2,19,0.09)] hover:before:opacity-100",
         className,
       )}
       whileHover={interactive ? { y: -4, scale: 1.01 } : undefined}
