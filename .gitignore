@@ -1,7 +1,30 @@
+# Dependencies
 node_modules
-dist
-.DS_Store
-.env
-.env.local
-npm-debug.log*
 
+# Build output and generated artifacts
+dist
+coverage
+.vite
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Local platform, editor, and hosting files
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json
+.vercel
+.netlify
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

@@ -2,11 +2,35 @@
   "name": "andrii-maksymov-portfolio",
   "private": true,
   "version": "0.1.0",
+  "description": "Senior front-end developer portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion.",
+  "author": "Andrii Maksymov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andriimaksymov/portfolio.git"
+  },
+  "homepage": "https://andriim.dev",
+  "bugs": {
+    "url": "https://github.com/andriimaksymov/portfolio/issues"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "framer-motion",
+    "frontend",
+    "personal-site"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "typecheck": "tsc -b",
+    "build": "npm run typecheck && vite build",
+    "test": "npm run build",
+    "preview": "vite preview --host 127.0.0.1",
+    "audit": "npm audit --audit-level=moderate"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

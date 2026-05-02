@@ -1,58 +1,54 @@
 # Andrii Maksymov Portfolio
 
-A modern personal portfolio landing page for **Andrii Maksymov**, a Senior Front-End React Developer.
+[![CI](https://github.com/andriimaksymov/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/andriimaksymov/portfolio/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-The site presents frontend architecture, React/Next.js expertise, product-focused engineering, performance work, mentorship, selected projects, certificates, and contact links in a polished single-page experience.
+Senior front-end developer portfolio for **Andrii Maksymov**, built as a polished, frontend-only React landing page.
 
-## Overview
+The site presents React/Next.js architecture experience, product-focused engineering, performance work, mentorship, selected projects, certificates, and public contact links. Content is intentionally grounded in the portfolio data in this repository.
 
-This project is a frontend-only portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion. It is designed as a clean, technical, senior-level landing page rather than a generic resume template.
+## Quick Facts
 
-The content is intentionally based on the provided portfolio information only. No fake companies, metrics, links, or exaggerated claims are added.
+| Item | Details |
+| --- | --- |
+| Live site | <https://andriim.dev> |
+| Stack | React 18, TypeScript, Vite, Tailwind CSS, Framer Motion, Lucide React |
+| App type | Static frontend portfolio |
+| Build output | `dist` |
+| Backend/database | None |
+| Environment variables | None required |
+| License | MIT |
 
-## Tech Stack
+## GitHub Repository Details
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Lucide React
+Recommended GitHub About settings:
 
-## Main Features
+- Description: `Senior front-end developer portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion.`
+- Website: `https://andriim.dev`
+- Topics: `portfolio`, `react`, `typescript`, `vite`, `tailwindcss`, `framer-motion`, `frontend`, `personal-site`
 
-- Responsive portfolio landing page
-- Light, polished visual system
-- Smooth section reveal animations with Framer Motion
-- Reusable component architecture
-- Hero section with technical dashboard/code visual
-- Experience timeline
-- Grouped skill cards
-- Project case-study cards
-- Senior engineering value section
-- Certificates section
-- Contact section with email, LinkedIn, and GitHub links
-- Downloadable CV from the `public` directory
+## Commands
 
-## Content Source
+| Command | Purpose |
+| --- | --- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the local Vite dev server at `http://127.0.0.1:5173/` |
+| `npm run typecheck` | Run TypeScript project checks |
+| `npm run build` | Type-check and create the production build |
+| `npm run test` | Run the repository verification command, currently the production build |
+| `npm run preview` | Serve the generated production build locally |
+| `npm run audit` | Check npm dependencies for moderate-or-higher vulnerabilities |
 
-The main portfolio content lives in:
+## Verification
 
-```text
-src/data/portfolio.ts
+Before opening a pull request or publishing changes, run:
+
+```bash
+npm run test
+npm run audit
 ```
 
-This file contains:
-
-- Profile information
-- Email and social links
-- Experience timeline data
-- Skill groups
-- Project descriptions and impact bullets
-- Senior engineering value cards
-- Certificates
-
-Keeping content in one file makes the page easier to maintain without digging through presentation components.
+The GitHub Actions workflow runs the same verification on pushes and pull requests.
 
 ## Project Structure
 
@@ -62,19 +58,10 @@ Keeping content in one file makes the page easier to maintain without digging th
 │   └── Andrii-Maksymov-CV.pdf
 ├── src/
 │   ├── components/
-│   │   ├── AnimatedCard.tsx
-│   │   ├── CTAButton.tsx
-│   │   ├── ExperienceTimeline.tsx
-│   │   ├── HeroVisual.tsx
-│   │   ├── ProjectCard.tsx
-│   │   ├── SectionWrapper.tsx
-│   │   └── SkillBadge.tsx
 │   ├── data/
 │   │   └── portfolio.ts
 │   ├── styles/
-│   │   └── index.css
 │   ├── utils/
-│   │   └── cn.ts
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── types.ts
@@ -85,149 +72,56 @@ Keeping content in one file makes the page easier to maintain without digging th
 └── vite.config.ts
 ```
 
-## Components
+## Content Updates
 
-The page is built from reusable components:
-
-- `SectionWrapper` handles consistent section spacing, headings, and reveal animation.
-- `AnimatedCard` provides the shared card surface, hover treatment, and motion behavior.
-- `CTAButton` provides consistent accessible buttons and links.
-- `SkillBadge` renders compact technology labels.
-- `ExperienceTimeline` renders the vertical professional timeline.
-- `ProjectCard` renders case-study style project cards.
-- `HeroVisual` renders the static technical dashboard/code visual in the hero section.
-
-## Design Direction
-
-The current design uses a refined light theme with:
-
-- Soft off-white page background
-- White glass-like card surfaces
-- Slate text hierarchy
-- Cyan, violet, and emerald accent colors
-- Subtle shadows and borders
-- Rounded but restrained UI elements
-- Minimal motion for section reveals and hover feedback
-
-The goal is to communicate seniority, clarity, product thinking, and engineering precision.
-
-## Accessibility Notes
-
-The implementation includes:
-
-- Semantic HTML sections
-- Accessible links and buttons
-- Keyboard-visible focus states
-- `aria-label` values for external profile links
-- Good text contrast on the light theme
-- Reduced-motion handling in CSS for users who prefer less animation
-
-## Getting Started
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-By default, Vite serves the app at:
-
-```text
-http://127.0.0.1:5173/
-```
-
-Build for production:
-
-```bash
-npm run build
-```
-
-Preview the production build:
-
-```bash
-npm run preview
-```
-
-## Available Scripts
-
-```bash
-npm run dev
-```
-
-Runs the local Vite development server.
-
-```bash
-npm run build
-```
-
-Runs TypeScript build checks and creates the production bundle in `dist`.
-
-```bash
-npm run preview
-```
-
-Serves the generated production build locally.
-
-## Updating Portfolio Content
-
-Most text updates should be made in:
+Most portfolio content lives in:
 
 ```text
 src/data/portfolio.ts
 ```
 
-Common edits:
+Use that file for profile details, social links, experience timeline data, skill groups, project descriptions, impact bullets, value cards, and certificates.
 
-- Update email/social links in `profile`
-- Add or edit experience highlights in `experiences`
-- Add skills in `skillGroups`
-- Update project copy in `projects`
-- Update certificates in `certificates`
-
-If a new section layout is needed, update `src/App.tsx` and add a reusable component under `src/components`.
-
-## CV Download
-
-The "Download CV" button points to:
+The downloadable CV lives at:
 
 ```text
 public/Andrii-Maksymov-CV.pdf
 ```
 
-To update the downloadable CV, replace that file while keeping the same filename, or update the `href` in `src/App.tsx`.
+To update the CV, replace that file while keeping the same filename, or update the `href` in `src/App.tsx`.
+
+## Design And Accessibility
+
+- Responsive single-page portfolio layout
+- Semantic sections and accessible links/buttons
+- Keyboard-visible focus states
+- Reduced-motion handling for users who prefer less animation
+- Reusable components for cards, buttons, section wrappers, skills, projects, and timeline content
 
 ## Deployment
 
-This is a static frontend app. It can be deployed to platforms such as:
+This is a static frontend app. It can be deployed to Vercel, Netlify, GitHub Pages, Cloudflare Pages, or any static host.
 
-- Vercel
-- Netlify
-- GitHub Pages
-- Cloudflare Pages
+Use these deployment settings:
 
-Build command:
+- Build command: `npm run build`
+- Output directory: `dist`
+- Environment variables: none
 
-```bash
-npm run build
-```
+## Public Data And Safety
 
-Output directory:
+This repository intentionally includes public portfolio information:
 
-```text
-dist
-```
+- Name and professional title
+- Public email address
+- LinkedIn profile URL
+- GitHub profile URL
+- Portfolio site URL
+- Downloadable CV PDF
+- Work experience, skills, selected projects, and certificates
 
-## Notes
+No backend, database, private API keys, or private environment variables are required for this app. See [SECURITY.md](SECURITY.md) for the security posture and reporting guidance.
 
-- No backend is required.
-- No database is required.
-- No private environment variables are required.
-- The site currently uses local/static assets only.
-- Portfolio claims should stay grounded in verified experience and supplied content.
+## License
 
+This project is licensed under the [MIT License](LICENSE).
