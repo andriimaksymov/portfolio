@@ -55,7 +55,7 @@ The GitHub Actions workflow runs the same verification on pushes and pull reques
 ```text
 .
 ├── public/
-│   └── Andrii-Maksymov-CV.pdf
+│   └── Andrii Maksymov — Senior Front-End Engineer.pdf
 ├── src/
 │   ├── components/
 │   ├── data/
@@ -85,7 +85,7 @@ Use that file for profile details, social links, experience timeline data, skill
 The downloadable CV lives at:
 
 ```text
-public/Andrii-Maksymov-CV.pdf
+public/Andrii Maksymov — Senior Front-End Engineer.pdf
 ```
 
 To update the CV, replace that file while keeping the same filename, or update the `href` in `src/App.tsx`.

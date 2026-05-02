@@ -168,8 +168,8 @@ function Hero() {
               Get in Touch
             </CTAButton>
             <CTAButton
-              href="/Andrii-Maksymov-CV.pdf"
-              download="Andrii-Maksymov-CV.pdf"
+              href="/Andrii Maksymov — Senior Front-End Engineer.pdf"
+              download="Andrii Maksymov — Senior Front-End Engineer.pdf"
               icon={<ArrowDownToLine className="h-4 w-4" aria-hidden="true" />}
             >
               Download CV
@@ -471,8 +471,8 @@ function Contact() {
               GitHub
             </CTAButton>
             <CTAButton
-              href="/Andrii-Maksymov-CV.pdf"
-              download="Andrii-Maksymov-CV.pdf"
+              href="/Andrii Maksymov — Senior Front-End Engineer.pdf"
+              download="Andrii Maksymov — Senior Front-End Engineer.pdf"
               icon={<ArrowDownToLine className="h-4 w-4" aria-hidden="true" />}
             >
               Download CV
