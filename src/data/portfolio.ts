@@ -4,7 +4,7 @@ export const profile = {
   name: "Andrii Maksymov",
   title: "Senior Front-End React Developer",
   email: "andrii.maksymov.1@gmail.com",
-  linkedin: "https://linkedin.com/in/maksymov-andrii/?skipRedirect=true",
+  linkedin: "https://www.linkedin.com/in/maksymov-andrii/",
   github: "https://github.com/andriimaksymov",
   headline:
     "I design and build scalable React and Next.js systems that perform.",
@@ -19,19 +19,13 @@ export const experiences: Experience[] = [
     period: "May 2022 - Present",
     location: "Remote",
     highlights: [
-      "I architected and deployed multiple high-stakes greenfield platforms from scratch.",
-      "I defined foundational tech stacks using Next.js, TypeScript, and React Query.",
-      "I designed scalable system architecture for long-term maintainability.",
-      "I implemented code review processes.",
-      "I mentored junior and mid-level developers.",
-      "I modernized legacy systems into performant, type-safe React architectures.",
-      "I reduced technical debt and maintenance overhead.",
-      "I owned the frontend DevOps lifecycle.",
-      "I built CI/CD pipelines and automated deployment workflows.",
-      "I improved team velocity and time-to-production.",
-      "I optimized performance and implemented SEO strategies.",
-      "I delivered fast, user-centric applications with sub-second response times.",
-      "I improved organic traffic through technical SEO.",
+      "I architected and delivered greenfield platforms with Next.js, TypeScript, React Query, and scalable architecture from day one.",
+      "I led frontend modernization initiatives, migrating legacy codebases to hooks, modular architecture, and type-safe React patterns.",
+      "I built complex UI systems including WebSocket-powered real-time features, rich text editors, PDF editing tools, and dnd-kit drag-and-drop interfaces.",
+      "I designed and implemented Playwright end-to-end testing strategy to improve release stability and reduce regressions.",
+      "I developed CI/CD pipelines and deployment workflows that improved delivery speed and reliability.",
+      "I mentored developers, conducted code reviews, and enforced frontend best practices across projects.",
+      "I optimized performance and SEO, achieving sub-second load times and stronger search visibility.",
     ],
   },
   {
@@ -76,12 +70,14 @@ export const skillGroups: SkillGroup[] = [
       "Zustand",
       "React Query",
       "Tailwind CSS",
+      "MUI",
       "Shadcn UI",
+      "dnd-kit",
     ],
   },
   {
     title: "Backend & Database",
-    skills: ["Node.js", "Express.js", "PostgreSQL", "Neon", "Prisma ORM", "RESTful APIs"],
+    skills: ["Node.js", "Express.js", "PostgreSQL", "Neon", "Prisma ORM", "RESTful APIs", "Cloudflare Workers"],
   },
   {
     title: "Engineering Quality",
@@ -113,6 +109,21 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
+    name: "Aivo Platform",
+    link: "https://www.aivo.ch",
+    subtitle: "Large-Scale SaaS Platform",
+    stack: ["React", "TypeScript", "React Query", "WebSockets", "dnd-kit"],
+    description:
+      "A long-term production SaaS platform with real-time collaboration, document workflows, advanced editing interfaces, and a modernized frontend architecture.",
+    impact: [
+      "I designed and evolved frontend architecture for a long-term production system.",
+      "I implemented WebSocket-powered real-time features for live updates and collaboration.",
+      "I developed advanced PDF editor, rich text editing, and document workflow interfaces.",
+      "I led migration from a legacy codebase to TypeScript, React Query, and modular architecture.",
+      "I introduced unit and end-to-end testing strategy to improve stability and reduce regressions.",
+    ],
+  },
+  {
     name: "Pet Life",
     link: "https://pet-life-sooty.vercel.app",
     subtitle: "Full-Stack Pet Management Platform",
@@ -127,12 +138,27 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: "JSON UI Forge",
+    link: "https://json-ui-forge.andrii-maksymov-1.workers.dev/",
+    subtitle: "Dynamic UI Builder Platform",
+    stack: ["React", "TypeScript", "JSON Schema", "Cloudflare Workers"],
+    description:
+      "A platform for dynamically generating user interfaces from JSON configurations, enabling rapid prototyping and runtime UI customization without redeployment.",
+    impact: [
+      "I designed a schema-driven UI engine that converts JSON into interactive React components.",
+      "I built flexible support for dynamic form rendering, component composition, and runtime layout generation.",
+      "I enabled low-code and no-code UI creation flows that reduce development effort.",
+      "I focused the architecture on extensibility so new components can be added without changing core logic.",
+      "I deployed the product on Cloudflare Workers for fast global edge access.",
+    ],
+  },
+  {
     name: "Portfolio Score",
     link: "https://portfolio-score-frontend.vercel.app",
     subtitle: "Developer Portfolio Analytics Tool",
     stack: ["React", "Node.js", "GitHub API"],
     description:
-      "An automated scoring tool that analyzes GitHub profiles and gives developers actionable feedback.",
+      "An automated scoring tool that analyzes GitHub and LinkedIn profiles and gives developers actionable feedback.",
     impact: [
       "I built a developer-focused analytics product.",
       "I integrated the GitHub API.",
@@ -170,7 +196,7 @@ export const valueCards: ValueCard[] = [
 ];
 
 export const certificates = [
-  "NodeJS: The Complete Guide - MVC, REST, GraphQL",
+  "NodeJS: The Complete Guide (MVC, REST, GraphQL)",
   "React Testing Library with Vitest",
   "JavaScript: The Advanced Concepts",
 ];

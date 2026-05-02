@@ -48,7 +48,7 @@ const stagger = {
 const heroStats = [
   { value: "5+", label: "Years building frontend products", icon: CalendarDays },
   { value: "3", label: "React roles from junior to senior", icon: GitBranch },
-  { value: "2", label: "Public product case studies", icon: Code2 },
+  { value: "4", label: "Featured product case studies", icon: Code2 },
   { value: "CI/CD", label: "Deployment workflows owned", icon: Rocket },
 ];
 
