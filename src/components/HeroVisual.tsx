@@ -2,7 +2,7 @@ import { Activity, BarChart3, Code2, GitBranch, Rocket, Zap } from "lucide-react
 
 const bars = [34, 58, 46, 72, 84, 62, 90, 76, 94, 68, 86, 54];
 const metricCards = [
-  { label: "LCP 0.8s", caption: "Core Web Vitals", icon: Zap, color: "text-emerald-600", bg: "bg-emerald-50" },
+  { label: "Sub-1s LCP", caption: "Core Web Vitals", icon: Zap, color: "text-emerald-600", bg: "bg-emerald-50" },
   { label: "Type-safe", caption: "Architecture", icon: GitBranch, color: "text-indigo-600", bg: "bg-indigo-50" },
   { label: "CI/CD", caption: "Delivery owned", icon: Rocket, color: "text-blue-600", bg: "bg-blue-50" },
 ];

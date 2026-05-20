@@ -4,7 +4,6 @@ import {
   ArrowRight,
   CalendarDays,
   CheckCircle2,
-  Code2,
   Github,
   GitBranch,
   Linkedin,
@@ -46,18 +45,18 @@ const stagger = {
 };
 
 const heroStats = [
-  { value: "5+", label: "Years building frontend products", icon: CalendarDays },
-  { value: "3", label: "React roles from junior to senior", icon: GitBranch },
-  { value: "4", label: "Featured product case studies", icon: Code2 },
-  { value: "CI/CD", label: "Deployment workflows owned", icon: Rocket },
+  { value: "9+", label: "Years building production web apps", icon: CalendarDays },
+  { value: "4+", label: "Years of senior frontend ownership", icon: GitBranch },
+  { value: "90+", label: "Lighthouse performance scores delivered", icon: Zap },
+  { value: "40%", label: "Regression reduction through E2E coverage", icon: Rocket },
 ];
 
 const capabilities = [
   {
-    title: "Build systems from scratch",
+    title: "Architect SaaS from zero",
     description:
-      "I architect greenfield platforms from the initial stack decision through scalable component, state, data, and deployment patterns.",
-    tags: ["Next.js", "TypeScript", "React Query"],
+      "I take greenfield platforms from stack selection to production architecture across components, data fetching, state, styling, and deployments.",
+    tags: ["Next.js 14/15", "TypeScript", "React Query"],
     icon: Sparkles,
     color: "text-indigo-600",
     bg: "bg-indigo-50",
@@ -65,26 +64,26 @@ const capabilities = [
   {
     title: "Modernize legacy frontends",
     description:
-      "I turn older interfaces into maintainable, type-safe React architectures while reducing technical debt and keeping product delivery moving.",
-    tags: ["Architecture", "Refactoring", "DX"],
+      "I move older React codebases into strict TypeScript, hooks, modular components, and maintainable data patterns while keeping delivery moving.",
+    tags: ["Strict TS", "Refactoring", "DX"],
     icon: GitBranch,
     color: "text-blue-600",
     bg: "bg-blue-50",
   },
   {
-    title: "Optimize for performance",
+    title: "Engineer real-time workflows",
     description:
-      "I treat Core Web Vitals, SEO, bundle size, and responsiveness as product features, not late-stage polish.",
-    tags: ["Performance", "SEO", "Core Web Vitals"],
+      "I build WebSocket collaboration, optimistic UI, PDF editing, rich-text workflows, and drag-and-drop product experiences.",
+    tags: ["WebSockets", "Optimistic UI", "dnd-kit"],
     icon: Zap,
     color: "text-emerald-600",
     bg: "bg-emerald-50",
   },
   {
-    title: "Raise team quality",
+    title: "Improve quality and velocity",
     description:
-      "I improve delivery with code review habits, testing strategy, CI/CD workflows, and mentorship for junior and mid-level developers.",
-    tags: ["Code Review", "Testing", "Mentorship"],
+      "I reduce regressions and broken builds with Playwright, GitHub Actions, preview deployments, code reviews, and mentorship.",
+    tags: ["Playwright", "CI/CD", "Mentorship"],
     icon: ShieldCheck,
     color: "text-amber-600",
     bg: "bg-amber-50",
@@ -144,17 +143,17 @@ function Hero() {
             variants={fadeUp}
           >
             <span className="h-2 w-2 rounded-full bg-indigo-500" />
-            Available for senior React opportunities
+            Available for senior frontend and architect roles
           </motion.div>
 
           <motion.h1 className="max-w-4xl text-4xl font-semibold leading-[1.08] text-neutral-950 md:text-6xl" variants={fadeUp}>
-            I design and build <span className="text-indigo-500">scalable</span>
+            I architect <span className="text-indigo-500">high-performance</span>
             <br />
-            React and Next.js systems that <span className="text-indigo-500">perform</span>.
+            React and Next.js products built to <span className="text-indigo-500">scale</span>.
           </motion.h1>
 
           <motion.p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-500 md:text-xl" variants={fadeUp}>
-            {profile.title} focused on architecture decisions, sub-second user experiences, and product delivery that stays maintainable after launch.
+            {profile.title} focused on SaaS architecture, real-time collaboration, Core Web Vitals, and product delivery that stays maintainable after launch.
           </motion.p>
           <motion.p className="mt-4 max-w-2xl leading-8 text-neutral-500" variants={fadeUp}>
             {profile.summary}
@@ -168,8 +167,8 @@ function Hero() {
               Get in Touch
             </CTAButton>
             <CTAButton
-              href="/Andrii Maksymov — Senior Front-End Engineer.pdf"
-              download="Andrii Maksymov — Senior Front-End Engineer.pdf"
+              href="/Andrii_Maksymov_CV.pdf"
+              download="Andrii_Maksymov_CV.pdf"
               icon={<ArrowDownToLine className="h-4 w-4" aria-hidden="true" />}
             >
               Download CV
@@ -239,7 +238,7 @@ function About() {
       id="about"
       eyebrow="Capabilities"
       title="What I actually do."
-      description="Beyond writing components, I build the systems, workflows, and patterns that help frontend teams ship useful products with confidence."
+      description="Beyond writing components, I build the architecture, workflows, and quality practices that help frontend teams ship useful products with confidence."
       className="bg-white"
     >
       <motion.div
@@ -279,8 +278,8 @@ function Impact() {
     <SectionWrapper
       id="impact"
       eyebrow="Engineering Impact"
-      title="Senior frontend work beyond shipping screens."
-      description="My work centers on durable architecture, performance, clean delivery habits, and teams that can keep improving after launch."
+      title="Senior frontend work with measurable outcomes."
+      description="My work centers on durable architecture, real-time product systems, performance, testing, delivery automation, and teams that keep improving after launch."
       className="bg-neutral-50"
     >
       <motion.div
@@ -321,14 +320,14 @@ function Impact() {
 }
 
 function Skills() {
-  const primaryStack = ["React", "Next.js 15", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma ORM"];
+  const primaryStack = ["React 18", "Next.js 14/15", "TypeScript strict", "React Query", "Playwright", "GitHub Actions"];
 
   return (
     <SectionWrapper
       id="skills"
       eyebrow="Tools & Stack"
       title="Production stack."
-      description="A compact view of the tools I use most often across frontend architecture, backend work, quality, and delivery."
+      description="A compact view of the tools I use most often across frontend architecture, real-time systems, backend work, quality, performance, and delivery."
       className="!py-16 bg-neutral-50 lg:!py-20"
     >
       <motion.div
@@ -445,7 +444,7 @@ function Contact() {
             <p className="mb-4 inline-flex rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-sm font-medium text-neutral-500">Contact</p>
             <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-neutral-950 md:text-5xl">Let&apos;s build something scalable, fast, and useful.</h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-neutral-500 md:text-lg">
-              I am open to senior frontend, React, Next.js, architecture, and product-focused engineering roles with teams building useful products.
+              I am open to senior frontend, React, Next.js, frontend architect, and product-focused engineering roles with teams building useful products.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
@@ -471,8 +470,8 @@ function Contact() {
               GitHub
             </CTAButton>
             <CTAButton
-              href="/Andrii Maksymov — Senior Front-End Engineer.pdf"
-              download="Andrii Maksymov — Senior Front-End Engineer.pdf"
+              href="/Andrii_Maksymov_CV.pdf"
+              download="Andrii_Maksymov_CV.pdf"
               icon={<ArrowDownToLine className="h-4 w-4" aria-hidden="true" />}
             >
               Download CV
@@ -504,8 +503,8 @@ export default function App() {
         <SectionWrapper
           id="experience"
           eyebrow="Experience"
-          title="A timeline of increasing ownership."
-          description="From modern React interfaces to architecture, mentorship, CI/CD, performance, SEO, and full frontend delivery."
+          title="9+ years of increasing ownership."
+          description="From HTML/CSS fundamentals and React delivery to frontend architecture, real-time collaboration, mentorship, CI/CD, performance, SEO, and full product ownership."
           className="bg-neutral-50"
         >
           <ExperienceTimeline experiences={experiences} />

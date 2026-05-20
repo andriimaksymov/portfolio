@@ -3,9 +3,9 @@
 [![CI](https://github.com/andriimaksymov/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/andriimaksymov/portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Senior front-end developer portfolio for **Andrii Maksymov**, built as a polished, frontend-only React landing page.
+Senior Frontend Engineer and Frontend Architect portfolio for **Andrii Maksymov**, built as a polished, frontend-only React landing page.
 
-The site presents React/Next.js architecture experience, product-focused engineering, performance work, mentorship, selected projects, certificates, and public contact links. Content is intentionally grounded in the portfolio data in this repository.
+The site presents React/Next.js architecture experience, real-time systems, product-focused engineering, Core Web Vitals work, testing strategy, mentorship, selected projects, certificates, and public contact links. Content is intentionally grounded in the portfolio data in this repository.
 
 ## Quick Facts
 
@@ -23,7 +23,7 @@ The site presents React/Next.js architecture experience, product-focused enginee
 
 Recommended GitHub About settings:
 
-- Description: `Senior front-end developer portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion.`
+- Description: `Senior Frontend Engineer and Frontend Architect portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion.`
 - Website: `https://andriim.dev`
 - Topics: `portfolio`, `react`, `typescript`, `vite`, `tailwindcss`, `framer-motion`, `frontend`, `personal-site`
 
@@ -55,7 +55,7 @@ The GitHub Actions workflow runs the same verification on pushes and pull reques
 ```text
 .
 ├── public/
-│   └── Andrii Maksymov — Senior Front-End Engineer.pdf
+│   └── Andrii_Maksymov_CV.pdf
 ├── src/
 │   ├── components/
 │   ├── data/
@@ -85,7 +85,7 @@ Use that file for profile details, social links, experience timeline data, skill
 The downloadable CV lives at:
 
 ```text
-public/Andrii Maksymov — Senior Front-End Engineer.pdf
+public/Andrii_Maksymov_CV.pdf
 ```
 
 To update the CV, replace that file while keeping the same filename, or update the `href` in `src/App.tsx`.
