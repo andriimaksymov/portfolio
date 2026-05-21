@@ -205,6 +205,10 @@ section:last-of-type { border-bottom: none; }
   flex-direction: column;
   gap: 12px;
 }
+.section-head.centered {
+  text-align: center;
+  align-items: center;
+}
 .section-label {
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
@@ -618,6 +622,20 @@ section:last-of-type { border-bottom: none; }
   background: linear-gradient(90deg, #3B82F6, #10B981);
   opacity: 0.8;
 }
+.project-placeholder {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 240px;
+}
+.project-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.project-placeholder .project-title { font-size: 22px; }
+.project-placeholder .project-desc { max-width: 260px; }
 .project:hover {
   transform: translateY(-4px);
   border-color: rgba(59,130,246,0.4);

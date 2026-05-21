@@ -2,7 +2,7 @@
 
 ## Project Scope
 
-This repository contains a static frontend portfolio built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion.
+This repository contains a static frontend portfolio built with React, TypeScript, Vite, and custom CSS.
 
 The app does not use:
 
@@ -23,7 +23,7 @@ This portfolio intentionally publishes the following information:
 - GitHub profile URL
 - Portfolio site URL
 - Downloadable CV PDF
-- Work experience, skills, selected projects, and certificates
+- Work experience, skills, and selected project descriptions
 
 Do not add private keys, API credentials, private documents, or local `.env` files to this repository.
 
