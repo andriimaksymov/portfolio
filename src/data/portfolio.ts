@@ -38,7 +38,7 @@ export const hero: HeroContent = {
   nameLines: ["Andrii", "Maksymov"],
   titleRotations: ["Senior Frontend Engineer", "React / Next.js Architect", "Product-minded Builder"],
   description:
-    "9 years building high-performance web products at scale. I architect React/Next.js systems that are fast, maintainable, and built to grow.",
+    "Senior Frontend Engineer with 9+ years building high-performance, production-grade React/Next.js applications at scale.",
   stats: [
     { value: 9, suffix: "+", label: "Years of Experience" },
     { value: 20, suffix: "+", label: "Projects Shipped" },
@@ -57,14 +57,14 @@ export const experiences: Experience[] = [
     location: "Remote",
     badge: { label: "● Current" },
     description:
-      "Architecting greenfield SaaS platforms, leading frontend modernization, and building complex real-time UI systems. Sole frontend decision-maker across multiple long-running production products.",
+      "Architecting greenfield SaaS platforms end-to-end, leading frontend modernization, and building real-time collaboration systems with WebSockets, React Query, TypeScript, and Next.js.",
     impact: [
-      "Sub-1s LCP achieved",
+      "Sub-1s LCP and 90+ Lighthouse scores",
       "~40% fewer regressions",
-      "3+ platforms architected",
-      "4 engineers mentored",
+      "30%+ technical debt reduction",
+      "3-4 engineers mentored",
     ],
-    tags: ["Next.js 15", "TypeScript", "React Query", "WebSockets", "Playwright", "Tailwind CSS", "dnd-kit", "CI/CD"],
+    tags: ["Next.js 14/15", "TypeScript", "React Query", "WebSockets", "Playwright", "Tailwind CSS", "Tiptap", "dnd-kit", "CI/CD"],
   },
   {
     id: "exp-rivo",
@@ -74,20 +74,20 @@ export const experiences: Experience[] = [
     period: "Oct 2021 – Apr 2022",
     location: "Rivne, Ukraine",
     description:
-      "Built high-frequency data dashboards and collaborated cross-functionally with design and product to ship scalable, accessible React applications.",
-    tags: ["React", "Redux Toolkit", "Context API", "TypeScript", "REST APIs"],
+      "Delivered complex, high-frequency data dashboards with Redux Toolkit and Context API while translating design and product requirements into fast, accessible React interfaces.",
+    tags: ["React", "Redux Toolkit", "Context API", "TypeScript", "REST APIs", "Performance"],
   },
   {
     id: "exp-proit",
     timelineLabel: "2017 — 2021",
     role: "Frontend Developer",
     company: "PRO-IT",
-    period: "Jul 2017 – Sep 2021",
+    period: "Jul 2017 – Oct 2020 · HTML/CSS Developer; Nov 2020 – Sep 2021 · Junior React Developer",
     location: "Rivne, Ukraine",
     badge: { label: "↑ Promoted to React Dev · Nov 2020", tone: "green" },
     description:
-      "Started as an HTML/CSS developer building responsive interfaces for 10+ client projects. Promoted to React development after independently transitioning into component-based architecture.",
-    tags: ["React", "HTML/CSS", "JavaScript", "Stripe API", "Responsive Design", "Sass"],
+      "Built responsive, accessible web applications for 10+ client projects, integrated Stripe and external APIs, and progressed from HTML/CSS delivery into React component architecture.",
+    tags: ["React", "HTML/CSS", "JavaScript", "TypeScript", "Stripe API", "Responsive Design", "Sass"],
   },
 ];
 
@@ -95,32 +95,32 @@ export const skillGroups: SkillGroup[] = [
   {
     name: "Frontend Core",
     icon: "code",
-    skills: ["React 18", "Next.js 15", "TypeScript", "JavaScript ES2024", "App Router", "RSC", "SSR/SSG/ISR"],
+    skills: ["React 18", "Next.js 14/15", "TypeScript", "JavaScript ES2024", "App Router", "RSC", "SSR/SSG/ISR"],
   },
   {
     name: "State & Data",
     icon: "database",
-    skills: ["TanStack Query", "Redux Toolkit", "Zustand", "SWR", "WebSockets", "Context API"],
+    skills: ["TanStack Query", "Redux Toolkit", "Zustand", "SWR", "WebSockets", "Context API", "REST APIs", "GraphQL"],
   },
   {
     name: "UI & Styling",
     icon: "style",
-    skills: ["Tailwind CSS", "shadcn/ui", "Radix UI", "MUI", "Framer Motion", "CSS Modules"],
+    skills: ["Tailwind CSS", "shadcn/ui", "Radix UI", "MUI", "Framer Motion", "CSS Modules", "Figma"],
   },
   {
     name: "Testing & Quality",
     icon: "shield",
-    skills: ["Playwright", "Vitest", "Jest", "React Testing Library", "Storybook", "ESLint"],
+    skills: ["Playwright", "Vitest", "Jest", "React Testing Library", "Storybook", "ESLint", "Prettier"],
   },
   {
     name: "Performance",
     icon: "zap",
-    skills: ["Core Web Vitals", "Lighthouse", "Bundle Optimization", "Code Splitting", "Image Optimization", "WCAG"],
+    skills: ["Core Web Vitals", "Lighthouse", "Bundle Optimization", "Code Splitting", "Image Optimization", "WCAG", "SEO"],
   },
   {
     name: "Backend & Tooling",
     icon: "terminal",
-    skills: ["Node.js", "PostgreSQL", "Prisma", "GitHub Actions", "Vercel", "Cloudflare Workers", "Docker"],
+    skills: ["Node.js", "Express.js", "PostgreSQL", "Prisma", "Neon", "GitHub Actions", "Vercel", "Cloudflare Workers", "Docker"],
   },
 ];
 
@@ -128,7 +128,7 @@ export const projects: ProjectsContent = {
   featured: {
     title: "Aivo Platform",
     description:
-      "Long-term production SaaS platform. Sole frontend architect — designed the full component architecture, real-time WebSocket system, PDF editor, rich-text engine, and E2E testing strategy from scratch.",
+      "Long-term production SaaS platform under NDA. Sole frontend architect — designed the component architecture, real-time WebSocket layer, PDF editor, rich-text engine, and E2E testing strategy from scratch.",
     tags: ["Next.js", "TypeScript", "React Query", "WebSockets", "Playwright", "Tiptap", "dnd-kit"],
     achievements: [
       "Real-time multi-user collaboration system",
@@ -142,19 +142,19 @@ export const projects: ProjectsContent = {
       title: "Pet Life",
       subtitle: "Full-Stack Pet Health Platform",
       description:
-        "End-to-end system for managing pet health records — from PostgreSQL schema design with Prisma, to Next.js 15 server components, to accessible UI. Full ownership.",
+        "Full-stack pet health management platform built with Next.js 15, TypeScript, PostgreSQL, Prisma, shadcn/ui, and Vercel. Full ownership from schema design to accessible UI.",
       tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Shadcn UI", "Vercel"],
       links: [
         { label: "GitHub", href: profile.github, external: true },
-        { label: "Live Demo", href: "https://pet-life-sooty.vercel.app", external: true },
+        { label: "Live Demo", href: "https://pet-life-jade.vercel.app/en", external: true },
       ],
     },
     {
       label: "Edge tooling",
       title: "JSON UI Forge",
-      subtitle: "Schema-Driven UI Builder",
+      subtitle: "Schema-Driven Dynamic UI Builder",
       description:
-        "A JSON-to-React rendering engine enabling no-code UI generation. Deployed on Cloudflare Workers edge for global low-latency access. Extensible without touching core logic.",
+        "A JSON-to-React rendering engine for no-code dynamic UI generation. Deployed on Cloudflare Workers edge for global low-latency access with an extensible schema-first architecture.",
       tags: ["React", "TypeScript", "JSON Schema", "Cloudflare Workers"],
       links: [
         { label: "GitHub", href: profile.github, external: true },
@@ -167,8 +167,11 @@ export const projects: ProjectsContent = {
       subtitle: "Developer Profile Analytics",
       description:
         "Automated scoring tool that ingests GitHub and LinkedIn profile data to generate structured, actionable feedback for developers.",
-      tags: ["React", "Node.js", "GitHub API"],
-      links: [{ label: "GitHub", href: profile.github, external: true }],
+      tags: ["React", "Node.js", "GitHub API", "LinkedIn API"],
+      links: [
+        { label: "GitHub", href: profile.github, external: true },
+        { label: "Live Demo", href: "https://portfolio-score-frontend.vercel.app/", external: true },
+      ],
     },
     {
       label: "Coming next",
@@ -187,7 +190,7 @@ export const about: AboutContent = {
   paragraphs: [
     "I've spent the last 9 years obsessing over how the web is built. Not just making things that look good — making things that are fast, scalable, and maintainable six months after launch.",
     "I started cutting HTML/CSS back in 2017 and never stopped pushing forward — from hand-coded layouts to React architecture, from client scripts to building real-time SaaS platforms. I care about the whole system: performance budgets, test coverage, CI pipelines, and the naming of variables.",
-    "When I'm not writing code, I'm thinking about it. I follow the React and Next.js RFC process, contribute to team architecture decisions, and try to write frontend that future developers will thank me for.",
+    "When I'm not writing code, I'm thinking about how teams ship better software. I care about the bridge between product, design, and engineering: readable architecture, useful tests, clean handoffs, and frontend that future developers can actually maintain.",
   ],
   values: ["Product Thinking", "High Ownership", "Performance First"],
   terminalTitle: "~/andrii — zsh",

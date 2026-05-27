@@ -23,7 +23,7 @@ export function Navigation() {
         </div>
       </nav>
 
-      <div className="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div className="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true" aria-label="Mobile navigation" hidden>
         <button className="mobile-close" id="mobileClose" aria-label="Close menu" type="button">
           [ CLOSE ]
         </button>

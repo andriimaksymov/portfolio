@@ -49,6 +49,18 @@ p { margin: 0; }
 }
 .skip:focus { left: 16px; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .cursor-dot, .cursor-ring {
   position: fixed;
   top: 0; left: 0;
@@ -175,6 +187,7 @@ p { margin: 0; }
   pointer-events: none;
   transition: opacity 250ms ease;
 }
+.mobile-menu[hidden] { display: none; }
 .mobile-menu.open { opacity: 1; pointer-events: auto; }
 .mobile-menu a {
   font-family: "Syne", sans-serif;
@@ -729,12 +742,6 @@ section:last-of-type { border-bottom: none; }
   color: #10B981;
 }
 .pf-achievements span { color: #10B981; margin-right: 8px; }
-.pf-foot {
-  margin-top: auto;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  color: #6B7280;
-}
 .pf-illu {
   position: relative;
   z-index: 1;

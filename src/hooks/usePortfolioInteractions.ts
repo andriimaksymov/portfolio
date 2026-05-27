@@ -97,22 +97,38 @@ export function usePortfolioInteractions() {
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileClose = document.getElementById("mobileClose");
     if (hamburger && mobileMenu && mobileClose) {
+      mobileMenu.toggleAttribute("inert", true);
+
       const openMenu = () => {
+        mobileMenu.hidden = false;
+        mobileMenu.toggleAttribute("inert", false);
         mobileMenu.classList.add("open");
         mobileMenu.setAttribute("aria-hidden", "false");
         hamburger.setAttribute("aria-expanded", "true");
         document.body.style.overflow = "hidden";
+        mobileClose.focus();
       };
       const closeMenu = () => {
         mobileMenu.classList.remove("open");
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.toggleAttribute("inert", true);
+        mobileMenu.hidden = true;
         hamburger.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
+        if (document.activeElement instanceof HTMLElement && mobileMenu.contains(document.activeElement)) {
+          hamburger.focus();
+        }
+      };
+      const closeMenuOnEscape = (event: KeyboardEvent) => {
+        if (event.key === "Escape" && mobileMenu.classList.contains("open")) {
+          closeMenu();
+        }
       };
 
       addElementEvent(hamburger, "click", openMenu);
       addElementEvent(mobileClose, "click", closeMenu);
       mobileMenu.querySelectorAll<HTMLElement>("a").forEach((link) => addElementEvent(link, "click", closeMenu));
+      addWindowEvent("keydown", closeMenuOnEscape);
     }
 
     const reveals = document.querySelectorAll<HTMLElement>(".reveal");

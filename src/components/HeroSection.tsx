@@ -20,7 +20,8 @@ export function HeroSection() {
               {hero.nameLines[1]}
             </h1>
 
-            <div className="hero-title" id="typeline" aria-live="polite" />
+            <div className="hero-title" id="typeline" aria-hidden="true" />
+            <p className="sr-only">{hero.titleRotations[0]}</p>
             <p className="hero-desc">{hero.description}</p>
 
             <div className="btn-row">
