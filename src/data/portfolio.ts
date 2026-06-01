@@ -34,15 +34,15 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const hero: HeroContent = {
-  status: "[ AVAILABLE FOR WORK ]",
+  status: "[ OPEN TO SENIOR FRONTEND ROLES ]",
   nameLines: ["Andrii", "Maksymov"],
-  titleRotations: ["Senior Frontend Engineer", "React / Next.js Architect", "Product-minded Builder"],
+  titleRotations: ["Senior Frontend Engineer", "React / Next.js Specialist", "SaaS Frontend Owner"],
   description:
-    "Senior Frontend Engineer with 9+ years building high-performance, production-grade React/Next.js applications at scale.",
+    "Senior Frontend Engineer with 8+ years in web development and 5+ years focused on production React, Next.js, and TypeScript SaaS platforms.",
   stats: [
-    { value: 9, suffix: "+", label: "Years of Experience" },
-    { value: 20, suffix: "+", label: "Projects Shipped" },
-    { value: 3, suffix: "+", label: "Engineers Mentored" },
+    { value: 8, suffix: "+", label: "Years Web Experience" },
+    { value: 5, suffix: "+", label: "React / Next.js Years" },
+    { value: 4, suffix: "", label: "Large Builds Owned" },
     { value: 90, suffix: "+", label: "Lighthouse Score" },
   ],
 };
@@ -57,14 +57,32 @@ export const experiences: Experience[] = [
     location: "Remote",
     badge: { label: "● Current" },
     description:
-      "Architecting greenfield SaaS platforms end-to-end, leading frontend modernization, and building real-time collaboration systems with WebSockets, React Query, TypeScript, and Next.js.",
+      "Built four large client projects from scratch to production, owning frontend planning, delivery, shared standards, CI/CD, and performance work across React and Next.js products.",
     impact: [
-      "Sub-1s LCP and 90+ Lighthouse scores",
-      "~40% fewer regressions",
-      "30%+ technical debt reduction",
-      "3-4 engineers mentored",
+      "4 large projects shipped from scratch",
+      "90+ Lighthouse and sub-1s LCP",
+      "Shared component standards adopted",
+      "Junior developers supported via reviews",
     ],
-    tags: ["Next.js 14/15", "TypeScript", "React Query", "WebSockets", "Playwright", "Tailwind CSS", "Tiptap", "dnd-kit", "CI/CD"],
+    tags: ["React", "Next.js 14/15", "TypeScript", "Payload CMS", "GitHub Actions", "Core Web Vitals", "SSR/SSG", "CI/CD"],
+  },
+  {
+    id: "exp-aivo",
+    timelineLabel: "2024 — Present",
+    role: "Frontend Engineer",
+    company: "Aivo",
+    period: "Jun 2024 – Present",
+    location: "Contract · Part-time · Remote",
+    badge: { label: "● Contract" },
+    description:
+      "Frontend owner on a multi-year commercial SaaS product with active customers, modernizing a legacy React codebase into a strict TypeScript, React Query, Material UI, and real-time document workflow platform.",
+    impact: [
+      "Strict TypeScript migration",
+      "Reusable MUI component library",
+      "PDF + Tiptap document workflows",
+      "WebSocket collaboration + Playwright E2E",
+    ],
+    tags: ["React", "TypeScript strict", "React Query", "Material UI", "WebSockets", "Tiptap", "dnd-kit", "Playwright", "Jest/RTL"],
   },
   {
     id: "exp-rivo",
@@ -74,8 +92,9 @@ export const experiences: Experience[] = [
     period: "Oct 2021 – Apr 2022",
     location: "Rivne, Ukraine",
     description:
-      "Delivered complex, high-frequency data dashboards with Redux Toolkit and Context API while translating design and product requirements into fast, accessible React interfaces.",
-    tags: ["React", "Redux Toolkit", "Context API", "TypeScript", "REST APIs", "Performance"],
+      "Developed data-intensive React applications and dashboards with Redux Toolkit and Context API while partnering with product, design, and backend teams on accessible, responsive interfaces.",
+    impact: ["Data-heavy dashboards delivered", "PR reviews and linting workflows", "Feature planning and estimation"],
+    tags: ["React", "Redux Toolkit", "Context API", "TypeScript", "REST APIs", "Responsive UI", "Accessibility"],
   },
   {
     id: "exp-proit",
@@ -86,8 +105,9 @@ export const experiences: Experience[] = [
     location: "Rivne, Ukraine",
     badge: { label: "↑ Promoted to React Dev · Nov 2020", tone: "green" },
     description:
-      "Built responsive, accessible web applications for 10+ client projects, integrated Stripe and external APIs, and progressed from HTML/CSS delivery into React component architecture.",
-    tags: ["React", "HTML/CSS", "JavaScript", "TypeScript", "Stripe API", "Responsive Design", "Sass"],
+      "Delivered responsive, cross-browser interfaces for 10+ client projects, then progressed into React application delivery with reusable components, third-party integrations, and production deployment support.",
+    impact: ["10+ client projects", "Promoted into React development", "Payments, auth, and API integrations"],
+    tags: ["React", "HTML5", "CSS3", "JavaScript", "TypeScript", "Sass", "Responsive Design", "External APIs"],
   },
 ];
 
@@ -95,17 +115,17 @@ export const skillGroups: SkillGroup[] = [
   {
     name: "Frontend Core",
     icon: "code",
-    skills: ["React 18", "Next.js 14/15", "TypeScript", "JavaScript ES2024", "App Router", "RSC", "SSR/SSG/ISR"],
+    skills: ["React 18", "Next.js 14/15", "App Router", "RSC", "SSR/SSG/ISR", "TypeScript strict", "JavaScript ES6+", "HTML5/CSS3"],
   },
   {
     name: "State & Data",
     icon: "database",
-    skills: ["TanStack Query", "Redux Toolkit", "Zustand", "SWR", "WebSockets", "Context API", "REST APIs", "GraphQL"],
+    skills: ["TanStack Query", "Redux Toolkit", "Zustand", "SWR", "Context API", "WebSockets", "RESTful APIs", "GraphQL basics"],
   },
   {
     name: "UI & Styling",
     icon: "style",
-    skills: ["Tailwind CSS", "shadcn/ui", "Radix UI", "MUI", "Framer Motion", "CSS Modules", "Figma"],
+    skills: ["Tailwind CSS", "shadcn/ui", "Material UI", "Radix UI", "Framer Motion", "CSS Modules", "Responsive Design", "Figma"],
   },
   {
     name: "Testing & Quality",
@@ -113,14 +133,14 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Playwright", "Vitest", "Jest", "React Testing Library", "Storybook", "ESLint", "Prettier"],
   },
   {
-    name: "Performance",
+    name: "Performance & SEO",
     icon: "zap",
-    skills: ["Core Web Vitals", "Lighthouse", "Bundle Optimization", "Code Splitting", "Image Optimization", "WCAG", "SEO"],
+    skills: ["Core Web Vitals", "Lighthouse", "Bundle Optimization", "Code Splitting", "Lazy Loading", "Image Optimization", "WCAG", "SEO Strategy"],
   },
   {
-    name: "Backend & Tooling",
+    name: "Backend & DevOps",
     icon: "terminal",
-    skills: ["Node.js", "Express.js", "PostgreSQL", "Prisma", "Neon", "GitHub Actions", "Vercel", "Cloudflare Workers", "Docker"],
+    skills: ["Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Payload CMS", "Neon", "Vercel", "Cloudflare Workers", "GitHub Actions", "Docker", "Jira"],
   },
 ];
 
@@ -128,12 +148,12 @@ export const projects: ProjectsContent = {
   featured: {
     title: "Aivo Platform",
     description:
-      "Long-term production SaaS platform under NDA. Sole frontend architect — designed the component architecture, real-time WebSocket layer, PDF editor, rich-text engine, and E2E testing strategy from scratch.",
-    tags: ["Next.js", "TypeScript", "React Query", "WebSockets", "Playwright", "Tiptap", "dnd-kit"],
+      "Multi-year commercial SaaS product with active customers. Frontend owner for the React Query data layer, Material UI design system, strict TypeScript migration, document workflows, rich-text/PDF editing, WebSocket collaboration, and test coverage.",
+    tags: ["React", "TypeScript strict", "React Query", "Material UI", "WebSockets", "Tiptap", "dnd-kit", "Playwright"],
     achievements: [
-      "Real-time multi-user collaboration system",
-      "PDF editor replacing third-party tooling",
-      "E2E test suite eliminating regression classes",
+      "Migrated JavaScript codebase to strict TypeScript",
+      "Reusable accessible component library replacing legacy CSS",
+      "Real-time document collaboration with optimistic UI",
     ],
   },
   cards: [
@@ -142,7 +162,7 @@ export const projects: ProjectsContent = {
       title: "Pet Life",
       subtitle: "Full-Stack Pet Health Platform",
       description:
-        "Full-stack pet health management platform built with Next.js 15, TypeScript, PostgreSQL, Prisma, shadcn/ui, and Vercel. Full ownership from schema design to accessible UI.",
+        "Full-stack pet health management platform built with Next.js 15, TypeScript, PostgreSQL, Prisma, shadcn/ui, and Vercel. Designed the relational schema, backend architecture, server components, server actions, and accessible UI end to end.",
       tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Shadcn UI", "Vercel"],
       links: [
         { label: "GitHub", href: profile.github, external: true },
@@ -154,7 +174,7 @@ export const projects: ProjectsContent = {
       title: "JSON UI Forge",
       subtitle: "Schema-Driven Dynamic UI Builder",
       description:
-        "A JSON-to-React rendering engine for no-code dynamic UI generation. Deployed on Cloudflare Workers edge for global low-latency access with an extensible schema-first architecture.",
+        "JSON-to-React rendering engine for no-code UI generation, dynamic forms, component composition, and runtime layout generation without redeployment. Deployed on Cloudflare Workers edge for global low-latency access.",
       tags: ["React", "TypeScript", "JSON Schema", "Cloudflare Workers"],
       links: [
         { label: "GitHub", href: profile.github, external: true },
@@ -166,7 +186,7 @@ export const projects: ProjectsContent = {
       title: "Portfolio Score",
       subtitle: "Developer Profile Analytics",
       description:
-        "Automated scoring tool that ingests GitHub and LinkedIn profile data to generate structured, actionable feedback for developers.",
+        "Automated scoring system that ingests GitHub and LinkedIn data to generate structured, actionable profile feedback for developers and demonstrate product-thinking plus API integration depth.",
       tags: ["React", "Node.js", "GitHub API", "LinkedIn API"],
       links: [
         { label: "GitHub", href: profile.github, external: true },
@@ -178,7 +198,7 @@ export const projects: ProjectsContent = {
       title: "More in the lab",
       subtitle: "",
       description:
-        "A streaming-first design-system tooling project is currently in development. Reach out for early access.",
+        "Full-stack and design-system experiments are currently in development. Reach out if you want the deeper code walkthrough.",
       tags: [],
       links: [{ label: "Get in touch", href: "#contact" }],
       variant: "placeholder",
@@ -188,11 +208,11 @@ export const projects: ProjectsContent = {
 
 export const about: AboutContent = {
   paragraphs: [
-    "I've spent the last 9 years obsessing over how the web is built. Not just making things that look good — making things that are fast, scalable, and maintainable six months after launch.",
-    "I started cutting HTML/CSS back in 2017 and never stopped pushing forward — from hand-coded layouts to React architecture, from client scripts to building real-time SaaS platforms. I care about the whole system: performance budgets, test coverage, CI pipelines, and the naming of variables.",
-    "When I'm not writing code, I'm thinking about how teams ship better software. I care about the bridge between product, design, and engineering: readable architecture, useful tests, clean handoffs, and frontend that future developers can actually maintain.",
+    "I build and ship production SaaS interfaces, modernize legacy frontend systems, and raise product quality through component architecture, reliable data-fetching patterns, testing, and performance work.",
+    "Across Movadex and Aivo, I've owned frontend delivery from technical planning to release: React/Next.js architecture, React Query layers, strict TypeScript migrations, design systems, CI/CD, test coverage, and Core Web Vitals improvements.",
+    "Alongside frontend depth, I bring practical full-stack range with Node.js, PostgreSQL, Prisma, Payload CMS, REST/GraphQL APIs, and modern cloud deployment tooling. I like remote teams where product, design, backend, and frontend stay close enough to make sharp decisions.",
   ],
-  values: ["Product Thinking", "High Ownership", "Performance First"],
+  values: ["Frontend Ownership", "Product Quality", "Performance & Testing"],
   terminalTitle: "~/andrii — zsh",
   terminalLines: [
     { className: "prompt", text: "$ " },
@@ -201,32 +221,32 @@ export const about: AboutContent = {
     { className: "res", text: "andrii.maksymov" },
     { newline: 2 },
     { className: "prompt", text: "$ " },
-    { className: "com", text: "cat skills.json | jq '.core'" },
+    { className: "com", text: "cat profile.json | jq '.focus'" },
     { newline: 1 },
-    { className: "res", text: '["React", "Next.js", "TypeScript"]' },
+    { className: "res", text: '["React", "Next.js", "TypeScript strict", "SaaS"]' },
     { newline: 2 },
     { className: "prompt", text: "$ " },
     { className: "com", text: "git log --oneline -5" },
     { newline: 1 },
     { className: "hash", text: "a3f2c1b " },
-    { className: "res", text: "feat: real-time collab via WebSockets" },
+    { className: "res", text: "feat: typed document workflows with Tiptap" },
     { newline: 1 },
     { className: "hash", text: "9d8e4a0 " },
-    { className: "res", text: "perf: LCP < 1s, Lighthouse 90+" },
+    { className: "res", text: "perf: sub-1s LCP and Lighthouse 90+" },
     { newline: 1 },
     { className: "hash", text: "b7c3f21 " },
-    { className: "res", text: "test: E2E coverage via Playwright" },
+    { className: "res", text: "test: Playwright + RTL regression coverage" },
     { newline: 1 },
     { className: "hash", text: "2e1a9d8 " },
-    { className: "res", text: "arch: migrated to TypeScript strict" },
+    { className: "res", text: "arch: JavaScript to TypeScript strict" },
     { newline: 1 },
     { className: "hash", text: "c5f8b3e " },
-    { className: "res", text: "init: greenfield SaaS platform" },
+    { className: "res", text: "ci: lint, typecheck, test, deploy" },
     { newline: 2 },
     { className: "prompt", text: "$ " },
     { className: "com", text: "echo $STATUS" },
     { newline: 1 },
-    { className: "green", text: "open to remote opportunities" },
+    { className: "green", text: "open to senior frontend roles" },
     { newline: 1 },
   ],
 };
@@ -235,7 +255,7 @@ export const contact: ContactContent = {
   eyebrow: "[ 05 — Contact ]",
   title: "Let's work together",
   description:
-    "I'm currently open to senior frontend and frontend architect roles — remote, full-time or contract. If you're building something ambitious, I'd love to hear about it.",
+    "I'm open to senior frontend and frontend architecture roles where React, Next.js, TypeScript, SaaS product work, performance, and practical full-stack thinking matter.",
   methods: [
     {
       label: "Email",
