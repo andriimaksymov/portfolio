@@ -57,19 +57,19 @@ export const experiences: Experience[] = [
     location: "Remote",
     badge: { label: "● Current" },
     description:
-      "Built four large client projects from scratch to production, owning frontend planning, delivery, shared standards, CI/CD, and performance work across React and Next.js products.",
+      "Built a customer-facing analytics platform on the Metabase API (charts, data tables, reports) and shipped multiple SaaS platforms from scratch to production, owning frontend planning, delivery, shared standards, CI/CD, and performance across React and Next.js products.",
     impact: [
-      "4 large projects shipped from scratch",
+      "Customer-facing Metabase analytics platform",
       "90+ Lighthouse and sub-1s LCP",
-      "Shared component standards adopted",
-      "Junior developers supported via reviews",
+      "Payload CMS e-commerce + SSR/SSG marketing sites",
+      "Shared standards adopted; juniors mentored",
     ],
-    tags: ["React", "Next.js 14/15", "TypeScript", "Payload CMS", "GitHub Actions", "Core Web Vitals", "SSR/SSG", "CI/CD"],
+    tags: ["React", "Next.js 14/15", "TypeScript", "Metabase API", "Payload CMS", "GitHub Actions", "Core Web Vitals", "SSR/SSG", "CI/CD"],
   },
   {
     id: "exp-aivo",
     timelineLabel: "2024 — Present",
-    role: "Frontend Engineer",
+    role: "Senior Frontend Engineer",
     company: "Aivo",
     period: "Jun 2024 – Present",
     location: "Contract · Part-time · Remote",
@@ -213,6 +213,18 @@ export const about: AboutContent = {
     "Alongside frontend depth, I bring practical full-stack range with Node.js, PostgreSQL, Prisma, Payload CMS, REST/GraphQL APIs, and modern cloud deployment tooling. I like remote teams where product, design, backend, and frontend stay close enough to make sharp decisions.",
   ],
   values: ["Frontend Ownership", "Product Quality", "Performance & Testing"],
+  education: [
+    {
+      institution: "National University of Water Management and Natural Resources",
+      credential: "M.Sc. in Hydropower Engineering",
+      period: "2011 – 2017",
+    },
+  ],
+  certifications: [
+    "Node.js — MVC, REST APIs, GraphQL (Udemy)",
+    "React Testing Library with Vitest (Udemy)",
+    "JavaScript: The Advanced Concepts (Udemy)",
+  ],
   terminalTitle: "~/andrii — zsh",
   terminalLines: [
     { className: "prompt", text: "$ " },

@@ -92,9 +92,17 @@ export type TerminalSegment =
   | { className: string; text: string; newline?: never }
   | { newline: number; className?: never; text?: never };
 
+export type EducationEntry = {
+  institution: string;
+  credential: string;
+  period: string;
+};
+
 export type AboutContent = {
   paragraphs: string[];
   values: string[];
+  education: EducationEntry[];
+  certifications: string[];
   terminalTitle: string;
   terminalLines: TerminalSegment[];
 };

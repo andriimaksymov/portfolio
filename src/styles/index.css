@@ -782,6 +782,63 @@ section:last-of-type { border-bottom: none; }
 }
 .value:hover { border-color: #3B82F6; color: #E8E8F0; }
 
+.about-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid #1E1E2E;
+}
+.cred-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin: 0 0 12px;
+}
+.cred-item + .cred-item { margin-top: 12px; }
+.cred-primary {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  color: #E8E8F0;
+  margin: 0;
+}
+.cred-secondary {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  color: #9CA3AF;
+  margin: 2px 0 0;
+  line-height: 1.6;
+}
+.cred-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cred-list li {
+  position: relative;
+  padding-left: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: #9CA3AF;
+  line-height: 1.6;
+}
+.cred-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3B82F6;
+}
+
 .terminal {
   background: #0D0D14;
   border: 1px solid #1E1E2E;

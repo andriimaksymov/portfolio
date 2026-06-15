@@ -20,6 +20,29 @@ export function AboutSection() {
                 </span>
               ))}
             </div>
+
+            <div className="about-credentials">
+              <div className="cred-block">
+                <h3 className="cred-title">Education</h3>
+                {about.education.map((entry) => (
+                  <div className="cred-item" key={entry.institution}>
+                    <p className="cred-primary">{entry.credential}</p>
+                    <p className="cred-secondary">
+                      {entry.institution} · {entry.period}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="cred-block">
+                <h3 className="cred-title">Certifications</h3>
+                <ul className="cred-list">
+                  {about.certifications.map((cert) => (
+                    <li key={cert}>{cert}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="terminal reveal" aria-hidden="true">
