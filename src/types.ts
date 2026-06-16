@@ -71,6 +71,7 @@ export type FeaturedProject = {
   description: string;
   tags: string[];
   achievements: string[];
+  links?: ProjectLink[];
 };
 
 export type ProjectCard = {

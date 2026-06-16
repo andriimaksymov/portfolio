@@ -33,6 +33,7 @@ function FeaturedProject() {
         <h3 className="project-title">{project.title}</h3>
         <p className="project-desc">{project.description}</p>
         <Tags items={project.tags} />
+        {project.links && <ProjectLinks links={project.links} />}
         <div className="pf-achievements">
           {project.achievements.map((achievement) => (
             <div key={achievement}>
