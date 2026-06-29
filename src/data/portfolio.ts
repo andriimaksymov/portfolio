@@ -206,10 +206,10 @@ export const projects: ProjectsContent = {
     {
       label: "Devtools",
       title: "Portfolio Score",
-      subtitle: "Developer Profile Analytics",
+      subtitle: "Developer Profile & Resume Analyzer",
       description:
-        "Automated scoring system that ingests GitHub and LinkedIn data to generate structured, actionable profile feedback. Engineered API integration logic and frontend feedback components with a focus on accuracy, security, UX, and product thinking.",
-      tags: ["React", "Node.js", "GitHub API", "LinkedIn API"],
+        "Full-stack platform that scores a developer's professional presence across GitHub, LinkedIn, and resume PDFs, returning structured, actionable feedback. The standout flow uploads a CV and runs an ATS-style analysis — extracting the PDF, scoring it, then rendering a side-by-side diff of the original against an AI-rewritten version with every change highlighted and click-to-explain. Built the multi-provider AI layer (Gemini/OpenAI/Groq with fallback), API integration, and frontend feedback components with a focus on accuracy, security, UX, and product thinking.",
+      tags: ["React", "NestJS", "AI / LLM", "GitHub API", "PDF Parsing"],
       links: [
         { label: "GitHub", href: profile.github, external: true },
         { label: "Live Demo", href: "https://portfolio-score-frontend.vercel.app/", external: true },
