@@ -31,6 +31,12 @@ export function ExperienceSection() {
                   <span>{experience.period}</span>
                   <span>·</span>
                   <span>{experience.location}</span>
+                  {experience.employmentType && (
+                    <>
+                      <span>·</span>
+                      <span>{experience.employmentType}</span>
+                    </>
+                  )}
                   {experience.badge && (
                     <span className={experience.badge.tone === "green" ? "pill pill-green" : "pill"}>{experience.badge.label}</span>
                   )}
@@ -38,13 +44,34 @@ export function ExperienceSection() {
 
                 <p className="exp-desc">{experience.description}</p>
 
-                {experience.impact && (
-                  <div className="chips">
-                    {experience.impact.map((impact) => (
-                      <span className="chip" key={impact}>
+                {experience.highlights && (
+                  <ul className="exp-highlights">
+                    {experience.highlights.map((highlight) => (
+                      <li key={highlight}>
                         <span className="gdot" />
-                        {impact}
-                      </span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {experience.roles && (
+                  <div className="exp-roles">
+                    {experience.roles.map((role) => (
+                      <div className="exp-subrole" key={role.role}>
+                        <div className="exp-subrole-head">
+                          <span className="exp-subrole-title">{role.role}</span>
+                          <span className="exp-subrole-period">{role.period}</span>
+                        </div>
+                        <ul className="exp-highlights">
+                          {role.highlights.map((highlight) => (
+                            <li key={highlight}>
+                              <span className="gdot" />
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
                   </div>
                 )}

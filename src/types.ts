@@ -41,6 +41,12 @@ export type ExperienceBadge = {
   tone?: "blue" | "green";
 };
 
+export type ExperienceRoleGroup = {
+  role: string;
+  period: string;
+  highlights: string[];
+};
+
 export type Experience = {
   id: string;
   timelineLabel: string;
@@ -48,9 +54,11 @@ export type Experience = {
   role: string;
   period: string;
   location: string;
+  employmentType?: string;
   badge?: ExperienceBadge;
   description: string;
-  impact?: string[];
+  highlights?: string[];
+  roles?: ExperienceRoleGroup[];
   tags: string[];
 };
 

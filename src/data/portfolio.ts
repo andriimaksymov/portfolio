@@ -38,9 +38,9 @@ export const hero: HeroContent = {
   nameLines: ["Andrii", "Maksymov"],
   titleRotations: ["Senior Frontend Engineer", "React / Next.js / TypeScript", "SaaS Platforms", "Full-Stack Capable"],
   description:
-    "Senior Frontend Engineer with 8+ years building production SaaS applications and 5+ years focused on React, TypeScript, and Next.js.",
+    "Senior Frontend Engineer with 9 years building production web applications and 5+ years focused on React, TypeScript, and Next.js.",
   stats: [
-    { value: 8, suffix: "+", label: "Years Web Experience" },
+    { value: 9, suffix: "", label: "Years Web Experience" },
     { value: 5, suffix: "+", label: "React / Next.js Years" },
     { value: 3, suffix: "", label: "Selected Projects" },
     { value: 90, suffix: "+", label: "Lighthouse Score" },
@@ -50,21 +50,43 @@ export const hero: HeroContent = {
 export const experiences: Experience[] = [
   {
     id: "exp-movadex",
-    timelineLabel: "2022 — Present",
+    timelineLabel: "2022 — 2026",
     role: "Senior Frontend Engineer",
     company: "Movadex",
-    period: "May 2022 – Present",
+    period: "May 2022 – Jun 2026",
     location: "Remote",
-    badge: { label: "● Current" },
+    employmentType: "Full-time",
     description:
-      "Senior frontend owner for production SaaS work: customer-facing analytics, multiple greenfield SaaS applications, high-performance Next.js platforms, e-commerce, document workflows, real-time collaboration, quality automation, and shared frontend standards.",
-    impact: [
-      "Metabase-powered analytics with charts, dashboards, tables, and reporting",
-      "Greenfield SaaS delivery from technical planning through release",
-      "Next.js SSR/SSG platforms with 90+ Lighthouse and sub-1s LCP",
-      "Payload CMS e-commerce, document workflows, WebSockets, CI/CD, and mentoring",
+      "Senior frontend owner shipping React/Next.js products for international clients across analytics, real estate, job-search, healthcare, e-commerce, and social-impact domains.",
+    highlights: [
+      "Architected and shipped React/Next.js applications across six domains, owning frontend from technical planning through release.",
+      "Built a customer-facing analytics product on Metabase data — multi-step onboarding, external account integrations, and the full data-visualization layer (dynamic dashboards, configurable tables, reusable charting logic).",
+      "Built a B2B platform from scratch — onboarding, client and admin areas, organization and position management, file uploads, and PDF/report generation — with React Query as the data layer.",
+      "Delivered a Next.js search platform for the German market using SSR/SSG, holding Lighthouse 90+ and sub-1s LCP under real content load.",
+      "Shipped an e-commerce build on Next.js + Payload CMS + Stripe, wiring CMS-driven content into storefront and payment flows.",
+      "Improved frontend maintainability with reusable component architecture, code-review practices, and clearer implementation patterns across projects.",
     ],
-    tags: ["React", "Next.js", "TypeScript", "Metabase API", "Payload CMS", "Tiptap", "WebSockets", "Playwright", "GitHub Actions"],
+    tags: ["React", "Next.js", "TypeScript", "Metabase API", "React Query", "Payload CMS", "Stripe", "SSR/SSG"],
+  },
+  {
+    id: "exp-aivo",
+    timelineLabel: "2024 — Now",
+    role: "Frontend Engineer",
+    company: "Aivo",
+    period: "Jun 2024 – Present",
+    location: "Remote",
+    employmentType: "Contract · Part-time",
+    badge: { label: "● Current", tone: "green" },
+    description:
+      "Modernizing a live production frontend — type safety, server-state, and tooling — without pausing feature delivery.",
+    highlights: [
+      "Migrated the entire legacy JavaScript codebase to strict TypeScript, eliminating a recurring class of runtime errors.",
+      "Made React Query the server-state standard, centralizing caching, loading/error states, and retries previously hand-rolled per component.",
+      "Retired deprecated dependencies, including a react-beautiful-dnd → dnd-kit migration to restore drag-and-drop on React 18.",
+      "Refactored Ant Design / SCSS screens into a reusable Material UI component set, collapsing one-off styling into one system.",
+      "Backfilled unit + Playwright E2E coverage on the five most critical flows, turning silent regressions into pre-merge failures.",
+    ],
+    tags: ["React", "TypeScript", "React Query", "Material UI", "dnd-kit", "Playwright"],
   },
   {
     id: "exp-rivo",
@@ -74,49 +96,48 @@ export const experiences: Experience[] = [
     period: "Oct 2021 – Apr 2022",
     location: "Rivne, Ukraine",
     description:
-      "Developed data-intensive React applications and dashboards using Redux Toolkit and Context API, partnering with product, design, and backend teams to ship accessible, responsive interfaces aligned with business requirements.",
-    impact: [
-      "React dashboards and data-heavy interfaces",
-      "Accessible responsive UX with backend collaboration",
-      "Pull request reviews, shared standards, and automated linting workflows",
-      "Feature planning, estimation, and implementation discussions",
+      "Built CRM and product frontends, proposing solutions and introducing libraries that improved development speed and maintainability.",
+    highlights: [
+      "Worked on an internal CRM system — discussing features, proposing solutions, and introducing frontend libraries that improved speed and maintainability.",
+      "Developed and extended a Next.js beauty-services platform, adding features and refactoring the codebase for maintainability as the product grew.",
+      "Built several Next.js landing-page sites with strong performance — Lighthouse 92 and green Core Web Vitals across the set.",
+      "Contributed to Phase 2 of a US B2C application for ValueSoft, Inc., shipping frontend enhancements and maintaining existing functionality.",
     ],
-    tags: ["React", "Redux Toolkit", "Context API", "TypeScript", "REST APIs", "Responsive UI", "Accessibility", "Linting"],
+    tags: ["React", "Next.js", "Redux Toolkit", "TypeScript", "REST APIs", "Performance"],
   },
   {
-    id: "exp-proit-react",
-    timelineLabel: "2020 — 2021",
-    role: "Junior React Developer",
+    id: "exp-proit",
+    timelineLabel: "2017 — 2021",
+    role: "Frontend Developer",
     company: "PRO-IT",
-    period: "Nov 2020 – Sep 2021",
+    period: "Jul 2017 – Sep 2021",
     location: "Rivne, Ukraine",
-    badge: { label: "↑ Promoted to React Dev · Nov 2020", tone: "green" },
+    badge: { label: "↑ Grew HTML/CSS → React", tone: "green" },
     description:
-      "Built React-based application components and feature workflows, implementing application state, business logic, API integration, and backend collaboration inside production client projects.",
-    impact: [
-      "Reusable React component patterns",
-      "Application state and business logic delivery",
-      "API integration and backend collaboration",
-      "Agile production code maintenance and extension",
+      "Grew from HTML/CSS markup into React and Next.js development, building reusable UI and customer-facing pages for production client projects.",
+    roles: [
+      {
+        role: "Junior React Developer",
+        period: "Nov 2020 – Sep 2021",
+        highlights: [
+          "Moved from HTML/CSS into React and Next.js, building reusable UI components and production-ready customer-facing pages.",
+          "Built a Next.js website for a B2B video-player product, helping customers understand it and configure integration options.",
+          "Developed an integration page where users selected video-player parameters and generated an embed script for their own sites.",
+          "Contributed frontend features to the video-player product alongside an existing engineering team.",
+        ],
+      },
+      {
+        role: "HTML/CSS Developer",
+        period: "Jul 2017 – Oct 2020",
+        highlights: [
+          "Built responsive HTML/CSS markup, email templates, reusable layout patterns, and shared CSS libraries for production websites.",
+          "Worked on a large B2C video-hosting product — markup, responsive layout, animation, and web performance optimization.",
+          "Built responsive, reusable markup for a custom web video player across desktop, tablet, and mobile.",
+          "Optimized page structure, styles, and assets to improve loading speed, responsiveness, and cross-browser stability.",
+        ],
+      },
     ],
-    tags: ["React", "JavaScript", "TypeScript", "REST APIs", "Component Architecture", "Agile", "Production Code"],
-  },
-  {
-    id: "exp-proit-html",
-    timelineLabel: "2017 — 2020",
-    role: "HTML/CSS Developer",
-    company: "PRO-IT",
-    period: "Jul 2017 – Oct 2020",
-    location: "Rivne, Ukraine",
-    description:
-      "Delivered responsive, cross-browser UI layouts for 10+ client projects, translating design handoff and business requirements into maintainable production interfaces.",
-    impact: [
-      "10+ responsive client projects",
-      "Maintainable Sass-based styling",
-      "Accessibility and performance optimization",
-      "External APIs, third-party services, payments, auth, and error handling",
-    ],
-    tags: ["HTML5", "CSS3", "Sass", "JavaScript", "Responsive Design", "Accessibility", "Performance", "External APIs"],
+    tags: ["React", "Next.js", "JavaScript", "HTML5", "CSS3", "Sass", "Responsive Design"],
   },
 ];
 
@@ -199,11 +220,11 @@ export const projects: ProjectsContent = {
 
 export const about: AboutContent = {
   paragraphs: [
-    "I build production SaaS applications with a focus on React, TypeScript, and Next.js, combining architecture, scalable component systems, and reliable data-fetching patterns.",
-    "My work spans architecting new applications from scratch, modernizing legacy frontend systems without unnecessary rewrites, building customer-facing analytics and data-visualization UIs, and leading frontend delivery from technical planning through release.",
-    "I am equally comfortable collaborating across the stack with Node.js, PostgreSQL, and Prisma in remote, cross-functional teams, while using AI-assisted development tools for code review, refactoring, debugging, test generation, and development acceleration.",
+    "I'm a Senior Frontend Engineer with 9 years building production web applications and 5+ years focused on React, TypeScript, and Next.js. I'm equally strong architecting new applications from scratch and modernizing legacy frontend systems without unnecessary rewrites.",
+    "My work spans customer-facing analytics and data-visualization UIs, JavaScript-to-TypeScript migrations, scalable component architecture, React Query data-fetching, and Playwright E2E testing — owning frontend delivery from technical planning through release.",
+    "I'm comfortable collaborating across the stack with Node.js, PostgreSQL, and Prisma in remote, cross-functional teams, and I lean on AI-assisted tools (Claude Code, Codex, Copilot, Cursor) for code review, refactoring, debugging, and test generation.",
   ],
-  values: ["Frontend Ownership", "SaaS Delivery", "Performance & Quality"],
+  values: ["Frontend Ownership", "Legacy Modernization", "SaaS Delivery", "Performance & Quality"],
   education: [
     {
       institution: "National University of Water Management and Natural Resources",

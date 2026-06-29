@@ -512,28 +512,63 @@ section:last-of-type { border-bottom: none; }
   line-height: 1.7;
   max-width: 640px;
 }
-.chips {
+.exp-highlights {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 720px;
 }
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  background: #111118;
-  border: 1px solid #1E1E2E;
-  border-radius: 6px;
+.exp-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-family: "DM Sans", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 1.65;
   color: #9CA3AF;
 }
-.chip .gdot {
+.gdot {
+  flex: none;
   width: 6px; height: 6px;
   border-radius: 50%;
   background: #10B981;
   box-shadow: 0 0 6px rgba(16,185,129,0.5);
+}
+.exp-highlights .gdot {
+  margin-top: 8px;
+}
+.exp-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.exp-subrole {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 16px;
+  border-left: 1px solid #1E1E2E;
+}
+.exp-subrole-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+.exp-subrole-title {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #E8E8F0;
+}
+.exp-subrole-period {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #6B7280;
+  letter-spacing: 0.04em;
 }
 .tags {
   display: flex;
