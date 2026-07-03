@@ -49,26 +49,6 @@ export const hero: HeroContent = {
 
 export const experiences: Experience[] = [
   {
-    id: "exp-movadex",
-    timelineLabel: "2022 — 2026",
-    role: "Senior Frontend Engineer",
-    company: "Movadex",
-    period: "May 2022 – Jun 2026",
-    location: "Remote",
-    employmentType: "Full-time",
-    description:
-      "Senior frontend owner shipping React/Next.js products for international clients across analytics, real estate, job-search, healthcare, e-commerce, and social-impact domains.",
-    highlights: [
-      "Architected and shipped React/Next.js applications across six domains, owning frontend from technical planning through release.",
-      "Built a customer-facing analytics product on Metabase data — multi-step onboarding, external account integrations, and the full data-visualization layer (dynamic dashboards, configurable tables, reusable charting logic).",
-      "Built a B2B platform from scratch — onboarding, client and admin areas, organization and position management, file uploads, and PDF/report generation — with React Query as the data layer.",
-      "Delivered a Next.js search platform for the German market using SSR/SSG, holding Lighthouse 90+ and sub-1s LCP under real content load.",
-      "Shipped an e-commerce build on Next.js + Payload CMS + Stripe, wiring CMS-driven content into storefront and payment flows.",
-      "Improved frontend maintainability with reusable component architecture, code-review practices, and clearer implementation patterns across projects.",
-    ],
-    tags: ["React", "Next.js", "TypeScript", "Metabase API", "React Query", "Payload CMS", "Stripe", "SSR/SSG"],
-  },
-  {
     id: "exp-aivo",
     timelineLabel: "2024 — Now",
     role: "Frontend Engineer",
@@ -89,9 +69,29 @@ export const experiences: Experience[] = [
     tags: ["React", "TypeScript", "React Query", "Material UI", "dnd-kit", "Playwright"],
   },
   {
+    id: "exp-movadex",
+    timelineLabel: "2022 — 2026",
+    role: "Senior Frontend Engineer",
+    company: "Movadex",
+    period: "May 2022 – Jun 2026",
+    location: "Remote",
+    employmentType: "Full-time",
+    description:
+      "Senior frontend owner shipping React/Next.js products for international clients across analytics, real estate, job-search, healthcare, e-commerce, and social-impact domains.",
+    highlights: [
+      "Architected and shipped React/Next.js applications across six domains, owning frontend from technical planning through release.",
+      "Built a customer-facing analytics product on Metabase data — multi-step onboarding, external account integrations, and the full data-visualization layer (dynamic dashboards, configurable tables, reusable charting logic).",
+      "Built a B2B platform from scratch — onboarding, client and admin areas, organization and position management, file uploads, and PDF/report generation — with React Query as the data layer.",
+      "Delivered a Next.js search platform for the German market using SSR/SSG, holding Lighthouse 90+ and sub-1s LCP under real content load.",
+      "Shipped an e-commerce build on Next.js + Payload CMS + Stripe, wiring CMS-driven content into storefront and payment flows.",
+      "Improved frontend maintainability with reusable component architecture, code-review practices, and clearer implementation patterns across projects.",
+    ],
+    tags: ["React", "Next.js", "TypeScript", "Metabase API", "React Query", "Payload CMS", "Stripe", "SSR/SSG"],
+  },
+  {
     id: "exp-rivo",
     timelineLabel: "2021 — 2022",
-    role: "Middle Frontend Engineer",
+    role: "Frontend Engineer (Mid-level)",
     company: "Rivo Agency",
     period: "Oct 2021 – Apr 2022",
     location: "Rivne, Ukraine",
@@ -117,7 +117,7 @@ export const experiences: Experience[] = [
       "Grew from HTML/CSS markup into React and Next.js development, building reusable UI and customer-facing pages for production client projects.",
     roles: [
       {
-        role: "Junior React Developer",
+        role: "React Developer",
         period: "Nov 2020 – Sep 2021",
         highlights: [
           "Moved from HTML/CSS into React and Next.js, building reusable UI components and production-ready customer-facing pages.",
@@ -235,7 +235,6 @@ export const about: AboutContent = {
   certifications: [
     "Node.js — MVC, REST APIs, GraphQL (Udemy)",
     "React Testing Library with Vitest (Udemy)",
-    "JavaScript: The Advanced Concepts (Udemy)",
   ],
   terminalTitle: "~/andrii — zsh",
   terminalLines: [
@@ -279,7 +278,7 @@ export const contact: ContactContent = {
   eyebrow: "[ 05 — Contact ]",
   title: "Let's work together",
   description:
-    "I'm open to senior frontend roles where React, Next.js, TypeScript, SaaS product work, performance, and practical full-stack thinking matter.",
+    "I'm open to senior frontend roles where React, Next.js, TypeScript, SaaS product work, performance, and practical full-stack thinking matter. Based in Rivne, Ukraine — remote, with flexible hours across US & EU time zones.",
   methods: [
     {
       label: "Email",
