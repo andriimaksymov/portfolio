@@ -1,6 +1,5 @@
 import { hero, profile } from "../data/portfolio";
 import { ArrowRightIcon } from "./Icons";
-import { HeroCodeIllustration } from "./Illustrations";
 import { SocialLinks } from "./SocialLinks";
 
 export function HeroSection() {
@@ -20,13 +19,12 @@ export function HeroSection() {
               {hero.nameLines[1]}
             </h1>
 
-            <div className="hero-title" id="typeline" aria-hidden="true" />
-            <p className="sr-only">{hero.titleRotations[0]}</p>
+            <p className="hero-title">{hero.title}</p>
             <p className="hero-desc">{hero.description}</p>
 
             <div className="btn-row">
-              <a href="#experience" className="btn btn-primary">
-                View My Work
+              <a href="#projects" className="btn btn-primary">
+                View my work
                 <ArrowRightIcon />
               </a>
               <a href={profile.cvHref} className="btn btn-secondary" download>
@@ -35,19 +33,6 @@ export function HeroSection() {
               <SocialLinks />
             </div>
           </div>
-
-          <HeroCodeIllustration />
-        </div>
-
-        <div className="stats reveal" id="stats">
-          {hero.stats.map((stat) => (
-            <div className="stat" key={stat.label}>
-              <div className="stat-num" data-target={stat.value} data-suffix={stat.suffix}>
-                0
-              </div>
-              <div className="stat-label">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

@@ -22,18 +22,11 @@ export type SocialLink = {
   icon: SocialIconName;
 };
 
-export type HeroStat = {
-  value: number;
-  suffix: string;
-  label: string;
-};
-
 export type HeroContent = {
   status: string;
   nameLines: [string, string];
-  titleRotations: string[];
+  title: string;
   description: string;
-  stats: HeroStat[];
 };
 
 export type ExperienceBadge = {
@@ -76,10 +69,12 @@ export type ProjectLink = {
 
 export type FeaturedProject = {
   title: string;
+  role: string;
   description: string;
+  notes: string[];
   tags: string[];
-  achievements: string[];
   links?: ProjectLink[];
+  linksNote?: string;
 };
 
 export type ProjectCard = {
@@ -87,6 +82,7 @@ export type ProjectCard = {
   title: string;
   subtitle: string;
   description: string;
+  notes?: string[];
   tags: string[];
   links: ProjectLink[];
   variant?: "standard" | "placeholder";
@@ -96,10 +92,6 @@ export type ProjectsContent = {
   featured: FeaturedProject;
   cards: ProjectCard[];
 };
-
-export type TerminalSegment =
-  | { className: string; text: string; newline?: never }
-  | { newline: number; className?: never; text?: never };
 
 export type EducationEntry = {
   institution: string;
@@ -112,8 +104,6 @@ export type AboutContent = {
   values: string[];
   education: EducationEntry[];
   certifications: string[];
-  terminalTitle: string;
-  terminalLines: TerminalSegment[];
 };
 
 export type ContactMethod = {

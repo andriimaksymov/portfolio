@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { about, contact, hero, navItems } from "../data/portfolio";
+import { contact, navItems } from "../data/portfolio";
 
 type Cleanup = () => void;
 
@@ -9,7 +9,6 @@ export function usePortfolioInteractions() {
     const observers: IntersectionObserver[] = [];
     const cleanupFns: Cleanup[] = [];
     const timeouts = new Set<number>();
-    const animationFrames = new Set<number>();
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const addWindowEvent = <K extends keyof WindowEventMap>(
@@ -39,50 +38,6 @@ export function usePortfolioInteractions() {
       timeouts.add(id);
       return id;
     };
-
-    const requestFrame = (callback: FrameRequestCallback) => {
-      let id = 0;
-      id = window.requestAnimationFrame((time) => {
-        animationFrames.delete(id);
-        if (!cancelled) callback(time);
-      });
-      animationFrames.add(id);
-      return id;
-    };
-
-    const isFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const dot = document.querySelector<HTMLElement>(".cursor-dot");
-    const ring = document.querySelector<HTMLElement>(".cursor-ring");
-    if (isFinePointer && dot && ring) {
-      let mouseX = window.innerWidth / 2;
-      let mouseY = window.innerHeight / 2;
-      let ringX = mouseX;
-      let ringY = mouseY;
-
-      addWindowEvent("mousemove", (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-      });
-
-      const tick = () => {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-        requestFrame(tick);
-      };
-      tick();
-
-      document.querySelectorAll<HTMLElement>("a, button, .skill-card, .project, .contact-card, .tl-item").forEach((element) => {
-        const enter = () => ring.classList.add("hover");
-        const leave = () => ring.classList.remove("hover");
-        addElementEvent(element, "mouseenter", enter);
-        addElementEvent(element, "mouseleave", leave);
-      });
-    } else {
-      if (dot) dot.style.display = "none";
-      if (ring) ring.style.display = "none";
-    }
 
     const nav = document.getElementById("nav");
     if (nav) {
@@ -148,178 +103,6 @@ export function usePortfolioInteractions() {
       );
       observers.push(revealObserver);
       reveals.forEach((element) => revealObserver.observe(element));
-    }
-
-    const stats = document.getElementById("stats");
-    if (stats) {
-      let countersRun = false;
-      const runCounters = () => {
-        if (countersRun) return;
-        countersRun = true;
-        stats.querySelectorAll<HTMLElement>(".stat-num").forEach((element) => {
-          const target = Number.parseInt(element.dataset.target ?? "0", 10);
-          const suffix = element.dataset.suffix ?? "";
-          const duration = 1400;
-          const start = performance.now();
-
-          const frame = (now: number) => {
-            const progress = Math.min(1, (now - start) / duration);
-            const eased = 1 - (1 - progress) ** 3;
-            const value = Math.round(target * eased);
-            element.textContent = value + (progress === 1 ? suffix : "");
-            if (progress < 1) requestFrame(frame);
-          };
-
-          requestFrame(frame);
-        });
-      };
-
-      if (prefersReduced) {
-        stats.querySelectorAll<HTMLElement>(".stat-num").forEach((element) => {
-          element.textContent = (element.dataset.target ?? "") + (element.dataset.suffix ?? "");
-        });
-        countersRun = true;
-      } else {
-        const statsObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                runCounters();
-                statsObserver.disconnect();
-              }
-            });
-          },
-          { threshold: 0.4 },
-        );
-        observers.push(statsObserver);
-        statsObserver.observe(stats);
-      }
-    }
-
-    const typeline = document.getElementById("typeline");
-    if (typeline) {
-      let lineIndex = 0;
-      let charIndex = 0;
-      let deleting = false;
-
-      const type = () => {
-        if (prefersReduced) {
-          typeline.textContent = hero.titleRotations[0];
-          return;
-        }
-
-        const word = hero.titleRotations[lineIndex];
-        if (!deleting) {
-          charIndex += 1;
-          typeline.textContent = word.slice(0, charIndex);
-          if (charIndex === word.length) {
-            setTimer(() => {
-              deleting = true;
-              type();
-            }, 2200);
-            return;
-          }
-          setTimer(type, 55);
-        } else {
-          charIndex -= 1;
-          typeline.textContent = word.slice(0, charIndex);
-          if (charIndex === 0) {
-            deleting = false;
-            lineIndex = (lineIndex + 1) % hero.titleRotations.length;
-            setTimer(type, 250);
-            return;
-          }
-          setTimer(type, 28);
-        }
-      };
-      type();
-    }
-
-    const termBody = document.getElementById("termBody");
-    const instantTerminal = () => {
-      if (!termBody) return;
-      termBody.innerHTML = "";
-      about.terminalLines.forEach((segment) => {
-        if (typeof segment.newline === "number") {
-          termBody.appendChild(document.createTextNode("\n".repeat(segment.newline)));
-          return;
-        }
-        const span = document.createElement("span");
-        span.className = segment.className;
-        span.textContent = segment.text;
-        termBody.appendChild(span);
-      });
-      const cursor = document.createElement("span");
-      cursor.className = "term-cursor";
-      termBody.appendChild(cursor);
-    };
-
-    let terminalStarted = false;
-    const startTerminal = () => {
-      if (!termBody || terminalStarted) return;
-      terminalStarted = true;
-      if (prefersReduced) {
-        instantTerminal();
-        return;
-      }
-
-      termBody.innerHTML = "";
-      let segmentIndex = 0;
-      let charIndex = 0;
-      let currentSpan: HTMLSpanElement | null = null;
-      const cursor = document.createElement("span");
-      cursor.className = "term-cursor";
-      termBody.appendChild(cursor);
-
-      const step = () => {
-        if (!termBody || segmentIndex >= about.terminalLines.length) return;
-        const segment = about.terminalLines[segmentIndex];
-        if (typeof segment.newline === "number") {
-          termBody.insertBefore(document.createTextNode("\n".repeat(segment.newline)), cursor);
-          segmentIndex += 1;
-          charIndex = 0;
-          currentSpan = null;
-          setTimer(step, 60);
-          return;
-        }
-
-        if (!currentSpan) {
-          currentSpan = document.createElement("span");
-          currentSpan.className = segment.className;
-          termBody.insertBefore(currentSpan, cursor);
-        }
-        charIndex += 1;
-        currentSpan.textContent = segment.text.slice(0, charIndex);
-
-        if (charIndex >= segment.text.length) {
-          segmentIndex += 1;
-          charIndex = 0;
-          currentSpan = null;
-          setTimer(step, 60);
-          return;
-        }
-
-        const delay = segment.className === "com" ? 28 : segment.className === "prompt" ? 30 : 8;
-        setTimer(step, delay);
-      };
-      step();
-    };
-
-    const terminal = document.querySelector<HTMLElement>(".terminal");
-    if (terminal && termBody) {
-      const terminalObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              startTerminal();
-              terminalObserver.disconnect();
-            }
-          });
-        },
-        { threshold: 0.35 },
-      );
-      observers.push(terminalObserver);
-      terminalObserver.observe(terminal);
     }
 
     const copyButton = document.getElementById("copyEmail");
@@ -413,7 +196,6 @@ export function usePortfolioInteractions() {
       cleanupFns.forEach((cleanup) => cleanup());
       observers.forEach((observer) => observer.disconnect());
       timeouts.forEach((id) => window.clearTimeout(id));
-      animationFrames.forEach((id) => window.cancelAnimationFrame(id));
       document.body.style.overflow = "";
     };
   }, []);

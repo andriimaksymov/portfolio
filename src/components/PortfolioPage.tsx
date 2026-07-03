@@ -17,17 +17,14 @@ export function PortfolioPage() {
         Skip to content
       </a>
 
-      <div className="cursor-dot" aria-hidden="true" />
-      <div className="cursor-ring" aria-hidden="true" />
-
       <Navigation />
 
       <main id="main">
         <span id="top" aria-hidden="true" />
         <HeroSection />
         <ExperienceSection />
-        <SkillsSection />
         <ProjectsSection />
+        <SkillsSection />
         <AboutSection />
         <ContactSection />
       </main>

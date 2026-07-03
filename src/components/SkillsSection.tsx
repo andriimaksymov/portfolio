@@ -6,7 +6,7 @@ export function SkillsSection() {
   return (
     <section id="skills" aria-label="Skills">
       <div className="container">
-        <SectionHeader eyebrow="[ 02 — Skills ]" title="My Technical Stack" />
+        <SectionHeader eyebrow="Skills" title="Tools I reach for" />
 
         <div className="skills-grid">
           {skillGroups.map((group) => (
@@ -15,7 +15,7 @@ export function SkillsSection() {
                 <div className="skill-ico">
                   <SkillIcon name={group.icon} />
                 </div>
-                <div className="skill-name">{group.name}</div>
+                <h3 className="skill-name">{group.name}</h3>
               </div>
 
               <div className="skill-tags">

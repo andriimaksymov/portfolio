@@ -6,7 +6,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" aria-label="Experience">
       <div className="container">
-        <SectionHeader eyebrow="[ 01 — Experience ]" title="Where I've Worked" />
+        <SectionHeader eyebrow="Experience" title="Where I've worked" />
 
         <div className="exp-layout">
           <aside className="exp-timeline reveal" aria-label="Timeline">
@@ -21,11 +21,11 @@ export function ExperienceSection() {
           <div className="exp-list">
             {experiences.map((experience) => (
               <article className="exp-entry reveal" id={experience.id} key={experience.id}>
-                <div className="exp-head">
-                  <div className="exp-role">{experience.role}</div>
-                  <div className="exp-sep">·</div>
-                  <div className="exp-company">{experience.company}</div>
-                </div>
+                <h3 className="exp-head">
+                  <span className="exp-role">{experience.role}</span>
+                  <span className="exp-sep">·</span>
+                  <span className="exp-company">{experience.company}</span>
+                </h3>
 
                 <div className="exp-meta">
                   <span>{experience.period}</span>
@@ -60,7 +60,7 @@ export function ExperienceSection() {
                     {experience.roles.map((role) => (
                       <div className="exp-subrole" key={role.role}>
                         <div className="exp-subrole-head">
-                          <span className="exp-subrole-title">{role.role}</span>
+                          <h4 className="exp-subrole-title">{role.role}</h4>
                           <span className="exp-subrole-period">{role.period}</span>
                         </div>
                         <ul className="exp-highlights">
