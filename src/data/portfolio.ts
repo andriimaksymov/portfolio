@@ -44,10 +44,10 @@ export const hero: HeroContent = {
 export const experiences: Experience[] = [
   {
     id: "exp-aivo",
-    timelineLabel: "2024 – Now",
+    timelineLabel: "2024 - Now",
     role: "Frontend Engineer",
     company: "Aivo",
-    period: "Jun 2024 – Present",
+    period: "Jun 2024 - Present",
     location: "Remote",
     employmentType: "Contract · Part-time",
     badge: { label: "Current", tone: "green" },
@@ -57,17 +57,17 @@ export const experiences: Experience[] = [
       "Migrated the codebase to strict TypeScript, module by module, while it stayed in production.",
       "Moved server state onto React Query and tore out the hand-rolled fetch, loading, and error code spread across components.",
       "Drag-and-drop broke on the React 18 upgrade (react-beautiful-dnd is unmaintained), so replaced it with dnd-kit.",
-      "Rebuilt the legacy Ant Design and SCSS screens on Material UI.",
-      "Added Playwright coverage on the flows that kept breaking, plus unit tests where they earned it.",
+      "Unified a mix of Ant Design, older MUI, and SCSS Modules into a single MUI component set, with shared styles and design tokens.",
+      "Added Playwright coverage on the flows that caused the most regressions (auth, dashboards, account management, configuration, and document workflows), with unit tests on key component and business logic.",
     ],
     tags: ["React", "TypeScript", "React Query", "Material UI", "dnd-kit", "Playwright"],
   },
   {
     id: "exp-movadex",
-    timelineLabel: "2022 – 2026",
+    timelineLabel: "2022 - 2026",
     role: "Senior Frontend Engineer",
     company: "Movadex",
-    period: "May 2022 – Jun 2026",
+    period: "May 2022 - Jun 2026",
     location: "Remote",
     employmentType: "Full-time",
     description:
@@ -84,10 +84,10 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-rivo",
-    timelineLabel: "2021 – 2022",
+    timelineLabel: "2021 - 2022",
     role: "Frontend Engineer (Mid-level)",
     company: "Rivo Agency",
-    period: "Oct 2021 – Apr 2022",
+    period: "Oct 2021 - Apr 2022",
     location: "Rivne, Ukraine",
     description:
       "Built CRM and product frontends, and brought in libraries where they actually saved time.",
@@ -101,10 +101,10 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-proit",
-    timelineLabel: "2017 – 2021",
+    timelineLabel: "2017 - 2021",
     role: "Frontend Developer",
     company: "PRO-IT",
-    period: "Jul 2017 – Sep 2021",
+    period: "Jul 2017 - Sep 2021",
     location: "Rivne, Ukraine",
     badge: { label: "Grew from HTML/CSS to React", tone: "green" },
     description:
@@ -112,7 +112,7 @@ export const experiences: Experience[] = [
     roles: [
       {
         role: "React Developer",
-        period: "Nov 2020 – Sep 2021",
+        period: "Nov 2020 - Sep 2021",
         highlights: [
           "Made the jump from HTML and CSS into React and Next.js: first reusable components, first production customer-facing pages.",
           "Built a Next.js site for a B2B video-player product.",
@@ -122,7 +122,7 @@ export const experiences: Experience[] = [
       },
       {
         role: "HTML/CSS Developer",
-        period: "Jul 2017 – Oct 2020",
+        period: "Jul 2017 - Oct 2020",
         highlights: [
           "Responsive markup, email templates, and shared CSS libraries for production sites.",
           "Worked on a large B2C video-hosting product: markup, responsive layout, animation, and performance.",
@@ -231,7 +231,7 @@ export const about: AboutContent = {
     {
       institution: "National University of Water Management and Natural Resources",
       credential: "M.Sc. in Hydropower Engineering",
-      period: "2011 – 2017",
+      period: "2011 - 2017",
     },
   ],
   certifications: [
