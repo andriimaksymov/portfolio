@@ -1,11 +1,18 @@
 # Dependencies
 node_modules
 
-# Build output and generated artifacts
+# Next.js build output and generated artifacts
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+.turbo
+
+# Misc build output
 dist
 coverage
 .vite
-*.tsbuildinfo
 
 # Environment and secrets
 .env
