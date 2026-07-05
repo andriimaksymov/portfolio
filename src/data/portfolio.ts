@@ -170,51 +170,50 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects: ProjectsContent = {
   featured: {
-    title: "Pet Life",
+    title: "GitMerit",
     role: "Solo build · full-stack",
     description:
-      "A pet health management app: owners keep pets, appointments, and health records in one place.",
+      "A developer profile intelligence platform: turns GitHub activity, a LinkedIn profile, and a resume PDF into hiring-ready scores with evidence-backed fixes.",
     notes: [
-      "Designed the relational schema and built it end to end on the Next.js 15 App Router with server components and server actions.",
-      "Kept the UI accessible: real labels, keyboard flows, and shadcn/ui primitives.",
-      "Leaned on AI tooling for schema, validation, and UI scaffolding, but wrote and own the core code.",
+      "Deterministic four-dimension GitHub scoring, with AI insights grounded against real repository evidence — ungrounded output is replaced, never rendered.",
+      "Resume review shows a side-by-side original vs. improved diff with click-to-explain changes.",
+      "Multi-provider AI fallback chain (OpenRouter, OpenAI, Gemini, Groq) with a deterministic fallback, so the full product works with zero API keys.",
     ],
-    tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "shadcn/ui", "Vercel"],
-    links: [{ label: "Live Demo", href: "https://pet-life-jade.vercel.app/en", external: true }],
-    linksNote: "Source is private",
+    tags: ["React 19", "NestJS", "TypeScript", "TanStack Query", "AI / LLM", "PostgreSQL"],
+    links: [
+      { label: "GitHub", href: "https://github.com/andriimaksymov/gitmerit", external: true },
+      { label: "Live Demo", href: "https://gitmerit.vercel.app/", external: true },
+    ],
   },
   cards: [
     {
       label: "Side project",
-      title: "JSON UI Forge",
-      subtitle: "Schema-driven UI builder",
+      title: "Pawbase",
+      subtitle: "Pet health management platform",
       description:
-        "A rendering engine that turns a JSON schema into a live React UI, with no redeploy needed to change it.",
+        "A pet health management app: owners keep pets, appointments, and health records in one place.",
       notes: [
-        "Maps JSON to forms, composed components, and layouts at runtime.",
-        "New component types plug in without touching the core engine.",
-        "Runs on Cloudflare Workers at the edge.",
+        "Designed the relational schema and built it end to end on the Next.js 15 App Router with server components and server actions.",
+        "Kept the UI accessible: real labels, keyboard flows, and shadcn/ui primitives.",
       ],
-      tags: ["React", "TypeScript", "JSON Schema", "Cloudflare Workers"],
-      links: [
-        { label: "GitHub", href: "https://github.com/andriimaksymov/json-ui-forge", external: true },
-        { label: "Live Demo", href: "https://json-ui-forge.andrii-maksymov-1.workers.dev", external: true },
-      ],
+      tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "shadcn/ui"],
+      links: [{ label: "Live Demo", href: "https://pet-life-jade.vercel.app/en", external: true }],
     },
     {
       label: "Side project",
-      title: "Portfolio Score",
-      subtitle: "Developer profile & resume analyzer",
+      title: "JSON UI Forge",
+      subtitle: "JSON-to-UI developer tool",
       description:
-        "Scores a developer's presence across GitHub, LinkedIn, and a resume PDF.",
+        "Turns pasted JSON into an editable form, a table preview, TypeScript interfaces, and generated React component code.",
       notes: [
-        "Upload a CV, run an ATS-style analysis, and get a side-by-side diff against an AI-rewritten version, every change click-to-explain.",
-        "Built the multi-provider AI layer (Gemini/OpenAI/Groq with fallback), the API, and the feedback UI.",
+        "Recursive form generation for nested objects and arrays, with rich previews for images, SVG, and links.",
+        "Type checking, linting, tests, and coverage gates run on every change.",
+        "Runs on Cloudflare Workers at the edge.",
       ],
-      tags: ["React", "NestJS", "AI / LLM", "GitHub API", "PDF Parsing"],
+      tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Cloudflare Workers"],
       links: [
-        { label: "GitHub", href: "https://github.com/andriimaksymov/portfolio-score", external: true },
-        { label: "Live Demo", href: "https://portfolio-score-frontend.vercel.app/", external: true },
+        { label: "GitHub", href: "https://github.com/andriimaksymov/json-ui-forge", external: true },
+        { label: "Live Demo", href: "https://json-ui-forge.andrii-maksymov-1.workers.dev", external: true },
       ],
     },
   ],
