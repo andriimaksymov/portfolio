@@ -25,8 +25,8 @@ export const work: WorkEntry[] = [
       "Turns a developer's GitHub, LinkedIn, and resume PDF into hiring-ready scores with evidence-backed fixes: deterministic scoring, AI insights grounded in real repo evidence, and a side-by-side resume diff with every change explained.",
     tags: ["React", "NestJS", "AI / LLM", "PDF parsing"],
     href: "https://gitmerit.vercel.app/",
-    image: "/work/portfolioscore.png",
-    imageAlt: "GitMerit: a resume analysis view with a side-by-side original and rewritten diff.",
+    image: "/work/gitmerit.png",
+    imageAlt: "GitMerit landing page: a scored developer-profile card next to the analysis form.",
   },
   {
     id: "pawbase",

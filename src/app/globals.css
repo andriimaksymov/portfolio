@@ -236,11 +236,85 @@ img { display: block; max-width: 100%; height: auto; }
   white-space: nowrap;
 }
 .work-arrow { color: var(--faint); transition: transform var(--d) var(--ease-out), color var(--d) var(--ease-out); }
+.work-title-link { display: inline-block; transition: color var(--d) var(--ease-out); }
 
 @media (hover: hover) and (pointer: fine) {
-  .work-link:hover .work-title { color: var(--accent-ink); }
-  .work-link:hover .work-arrow { color: var(--accent-ink); transform: translateX(4px); }
+  .work-title-link:hover { color: var(--accent-ink); }
+  .work-title-link:hover .work-arrow { color: var(--accent-ink); transform: translateX(4px); }
 }
+
+/* ---------- Work preview (lightbox) ---------- */
+.work-preview-btn {
+  margin-top: var(--s-4);
+  padding: 0;
+  font-size: var(--t--1);
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--line-2);
+  text-underline-offset: 4px;
+  transition: color var(--d) var(--ease-out), text-decoration-color var(--d) var(--ease-out);
+}
+.work-preview-btn:hover { color: var(--ink); text-decoration-color: var(--ink); }
+
+.preview {
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  width: min(1040px, calc(100vw - 2 * var(--gutter)));
+  max-height: calc(100dvh - 2 * var(--s-6));
+  margin: auto;
+  overflow: auto;
+}
+/* The dim veil is drawn by the dialog's own box-shadow, not ::backdrop:
+   Chromium intermittently fails to repaint ::backdrop over scrolled content,
+   leaving parts of the page undimmed. The shadow shares the dialog's paint
+   layer, so it can never desync. ::backdrop stays for click-outside-to-close. */
+.preview::backdrop { background: transparent; }
+
+.preview {
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+  box-shadow: 0 0 0 100vmax oklch(0.21 0.006 265 / 0.55);
+  transition: opacity var(--d-slow) var(--ease-out), transform var(--d-slow) var(--ease-out);
+}
+.preview[open] { opacity: 1; transform: none; }
+@starting-style {
+  .preview[open] { opacity: 0; transform: translateY(10px) scale(0.99); }
+}
+
+body:has(.preview[open]) { overflow: hidden; }
+
+.preview-head, .preview-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  font-size: var(--t--1);
+}
+.preview-head { border-bottom: 1px solid var(--line); }
+.preview-foot { border-top: 1px solid var(--line); }
+.preview-num { color: var(--faint); }
+.preview-name { color: var(--ink); }
+.preview-close {
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  color: var(--muted);
+  transition: color var(--d) var(--ease-out);
+}
+.preview-close:hover { color: var(--ink); }
+.preview-kbd { color: var(--faint); }
+.preview-img { width: 100%; height: auto; background: var(--bg-inset); }
+.preview-meta { color: var(--muted); }
+.preview-foot a {
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: color var(--d) var(--ease-out);
+}
+.preview-foot a:hover { color: var(--accent-ink); }
 
 /* ---------- Experience ---------- */
 .exp-list { display: flex; flex-direction: column; }

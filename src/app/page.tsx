@@ -1,4 +1,5 @@
 import { Nav } from "@/components/Nav";
+import { WorkPreview } from "@/components/WorkPreview";
 import { work } from "@/data/work";
 import { about, contact, experiences, profile, skillGroups } from "@/data/portfolio";
 
@@ -68,44 +69,55 @@ export default function Home() {
           <ol className="work-list">
             {work.map((entry, i) => {
               const num = String(i + 1).padStart(2, "0");
-              const inner = (
-                <>
-                  <span className="work-num mono">{num}</span>
-                  <div className="work-main">
-                    <h3 className="work-title">
-                      {entry.title}
-                      {entry.href && (
-                        <span className="work-arrow" aria-hidden="true">
-                          {" "}
-                          &rarr;
-                        </span>
-                      )}
-                    </h3>
-                    <p className="work-blurb">{entry.blurb}</p>
-                    <div className="work-tags">
-                      {entry.tags.map((t) => (
-                        <span className="work-tag mono" key={t}>
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <span className="work-meta mono">
-                    {entry.meta}
-                    <br />
-                    {entry.year}
-                  </span>
-                </>
-              );
               return (
                 <li key={entry.id}>
-                  {entry.href ? (
-                    <a className="work-row work-link" href={entry.href} target="_blank" rel="noopener noreferrer">
-                      {inner}
-                    </a>
-                  ) : (
-                    <div className="work-row">{inner}</div>
-                  )}
+                  <div className="work-row">
+                    <span className="work-num mono">{num}</span>
+                    <div className="work-main">
+                      <h3 className="work-title">
+                        {entry.href ? (
+                          <a
+                            className="work-title-link"
+                            href={entry.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {entry.title}
+                            <span className="work-arrow" aria-hidden="true">
+                              {" "}
+                              &rarr;
+                            </span>
+                          </a>
+                        ) : (
+                          entry.title
+                        )}
+                      </h3>
+                      <p className="work-blurb">{entry.blurb}</p>
+                      <div className="work-tags">
+                        {entry.tags.map((t) => (
+                          <span className="work-tag mono" key={t}>
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      {entry.image && (
+                        <WorkPreview
+                          num={num}
+                          title={entry.title}
+                          year={entry.year}
+                          meta={entry.meta}
+                          image={entry.image}
+                          imageAlt={entry.imageAlt ?? `${entry.title} screenshot`}
+                          href={entry.href}
+                        />
+                      )}
+                    </div>
+                    <span className="work-meta mono">
+                      {entry.meta}
+                      <br />
+                      {entry.year}
+                    </span>
+                  </div>
                 </li>
               );
             })}
