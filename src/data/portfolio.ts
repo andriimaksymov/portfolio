@@ -3,11 +3,8 @@ import type {
   ContactContent,
   Experience,
   HeroContent,
-  NavItem,
   Profile,
-  ProjectsContent,
   SkillGroup,
-  SocialLink,
 } from "../types";
 
 export const profile: Profile = {
@@ -19,38 +16,26 @@ export const profile: Profile = {
   cvHref: "/Andrii_Maksymov_CV.pdf",
 };
 
-export const navItems: NavItem[] = [
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-];
-
-export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: profile.github, icon: "github" },
-  { label: "LinkedIn", href: profile.linkedin, icon: "linkedin" },
-  { label: "Email", href: `mailto:${profile.email}`, icon: "email" },
-];
-
 export const hero: HeroContent = {
-  status: "Open to senior frontend roles",
-  nameLines: ["Andrii", "Maksymov"],
   title: "Senior Frontend Engineer",
+  headline: {
+    before: "Production React, modernized without ",
+    emphasis: "stopping delivery",
+    after: ".",
+  },
   description:
-    "Nine years building production web applications, the last five focused on React, TypeScript, and Next.js. I work best on data-heavy product UIs and design systems, and on moving older frontends onto modern footing without full rewrites.",
+    "Nine years in web, five in React, TypeScript, and Next.js. I ship data-heavy product UIs end to end, and pull older frontends onto modern footing while the team keeps shipping features.",
 };
 
 export const experiences: Experience[] = [
   {
     id: "exp-aivo",
-    timelineLabel: "2024 - Now",
     role: "Senior Frontend Engineer",
     company: "Aivo",
     period: "Jun 2024 - Present",
     location: "Remote",
     employmentType: "Contract · Primary engagement since Jun 2026",
-    badge: { label: "Current", tone: "green" },
+    badge: { label: "Current" },
     description:
       "Modernizing a live production audit platform (types, server state, tooling) without a rewrite, and without freezing feature work.",
     highlights: [
@@ -66,7 +51,6 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-movadex",
-    timelineLabel: "2022 - 2026",
     role: "Senior Frontend Engineer",
     company: "Movadex",
     period: "May 2022 - Jun 2026",
@@ -86,7 +70,6 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-rivo",
-    timelineLabel: "2021 - 2022",
     role: "Frontend Engineer (Mid-level)",
     company: "Rivo Agency",
     period: "Oct 2021 - Apr 2022",
@@ -103,12 +86,11 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-proit",
-    timelineLabel: "2017 - 2021",
     role: "Frontend Developer",
     company: "PRO-IT",
     period: "Jul 2017 - Sep 2021",
     location: "Rivne, Ukraine",
-    badge: { label: "Grew from HTML/CSS to React", tone: "green" },
+    badge: { label: "Grew from HTML/CSS to React" },
     description:
       "Grew from HTML/CSS markup into React and Next.js over four years of production client work.",
     roles: [
@@ -140,86 +122,29 @@ export const experiences: Experience[] = [
 export const skillGroups: SkillGroup[] = [
   {
     name: "Frontend Core",
-    icon: "code",
     skills: ["React 18/19", "Next.js 14/15", "App Router", "RSC", "SSR/SSG/ISR", "TypeScript strict", "JavaScript ES6+", "HTML5", "CSS3"],
   },
   {
     name: "State & Data",
-    icon: "database",
     skills: ["React Query", "Redux Toolkit", "Zustand", "WebSockets", "REST APIs", "GraphQL basic"],
   },
   {
     name: "UI & Styling",
-    icon: "style",
     skills: ["Tailwind CSS", "shadcn/ui", "Material UI (MUI)", "Radix UI", "Framer Motion", "CSS Modules"],
   },
   {
     name: "Backend & DB",
-    icon: "terminal",
     skills: ["Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Payload CMS"],
   },
   {
     name: "Testing & Quality",
-    icon: "shield",
     skills: ["Playwright (E2E)", "Vitest", "Jest", "React Testing Library", "Storybook"],
   },
   {
     name: "Performance & Tooling",
-    icon: "zap",
     skills: ["Core Web Vitals", "Lighthouse", "Bundle Optimization", "Code Splitting", "Lazy Loading", "GitHub Actions", "Vercel", "Cloudflare Workers", "Docker"],
   },
 ];
-
-export const projects: ProjectsContent = {
-  featured: {
-    title: "GitMerit",
-    role: "Solo build · full-stack",
-    description:
-      "A developer profile intelligence platform: turns GitHub activity, a LinkedIn profile, and a resume PDF into hiring-ready scores with evidence-backed fixes.",
-    notes: [
-      "Deterministic four-dimension GitHub scoring, with AI insights grounded against real repository evidence — ungrounded output is replaced, never rendered.",
-      "Resume review shows a side-by-side original vs. improved diff with click-to-explain changes.",
-      "Multi-provider AI fallback chain (OpenRouter, OpenAI, Gemini, Groq) with a deterministic fallback, so the full product works with zero API keys.",
-    ],
-    tags: ["React 19", "NestJS", "TypeScript", "TanStack Query", "AI / LLM", "PostgreSQL"],
-    links: [
-      { label: "GitHub", href: "https://github.com/andriimaksymov/gitmerit", external: true },
-      { label: "Live Demo", href: "https://gitmerit.vercel.app/", external: true },
-    ],
-  },
-  cards: [
-    {
-      label: "Side project",
-      title: "Pawbase",
-      subtitle: "Pet health management platform",
-      description:
-        "A pet health management app: owners keep pets, appointments, and health records in one place.",
-      notes: [
-        "Designed the relational schema and built it end to end on the Next.js 15 App Router with server components and server actions.",
-        "Kept the UI accessible: real labels, keyboard flows, and shadcn/ui primitives.",
-      ],
-      tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "shadcn/ui"],
-      links: [{ label: "Live Demo", href: "https://pet-life-jade.vercel.app/en", external: true }],
-    },
-    {
-      label: "Side project",
-      title: "JSON UI Forge",
-      subtitle: "JSON-to-UI developer tool",
-      description:
-        "Turns pasted JSON into an editable form, a table preview, TypeScript interfaces, and generated React component code.",
-      notes: [
-        "Recursive form generation for nested objects and arrays, with rich previews for images, SVG, and links.",
-        "Type checking, linting, tests, and coverage gates run on every change.",
-        "Runs on Cloudflare Workers at the edge.",
-      ],
-      tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Cloudflare Workers"],
-      links: [
-        { label: "GitHub", href: "https://github.com/andriimaksymov/json-ui-forge", external: true },
-        { label: "Live Demo", href: "https://json-ui-forge.andrii-maksymov-1.workers.dev", external: true },
-      ],
-    },
-  ],
-};
 
 export const about: AboutContent = {
   paragraphs: [
@@ -242,28 +167,6 @@ export const about: AboutContent = {
 };
 
 export const contact: ContactContent = {
-  eyebrow: "Contact",
-  title: "Get in touch",
   description:
     "I'm open to senior frontend roles where React, Next.js, TypeScript, SaaS product work, performance, and practical full-stack thinking matter. Based in Rivne, Ukraine, working remotely with flexible hours across US & EU time zones.",
-  methods: [
-    {
-      label: "Email",
-      value: profile.email,
-      icon: "email",
-      copyValue: profile.email,
-    },
-    {
-      label: "LinkedIn",
-      value: "linkedin.com/in/maksymov-andrii",
-      icon: "linkedin",
-      href: profile.linkedin,
-    },
-    {
-      label: "GitHub",
-      value: "github.com/andriimaksymov",
-      icon: "github",
-      href: profile.github,
-    },
-  ],
 };

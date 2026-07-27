@@ -1,11 +1,8 @@
-export type NavItem = {
-  id: string;
-  label: string;
-};
-
-export type SocialIconName = "github" | "linkedin" | "email";
-
-export type SkillIconName = "code" | "database" | "style" | "shield" | "zap" | "terminal";
+/**
+ * Every type here backs something the page actually renders.
+ * If a field stops being rendered, delete it — unused exports and unread
+ * fields look like live copy and silently drift out of date.
+ */
 
 export type Profile = {
   name: string;
@@ -16,22 +13,20 @@ export type Profile = {
   cvHref: string;
 };
 
-export type SocialLink = {
-  label: string;
-  href: string;
-  icon: SocialIconName;
-};
-
 export type HeroContent = {
-  status: string;
-  nameLines: [string, string];
+  /** Sits after the name in the kicker line. */
   title: string;
+  /** Rendered as `before<em>emphasis</em>after` in the h1. */
+  headline: {
+    before: string;
+    emphasis: string;
+    after: string;
+  };
   description: string;
 };
 
 export type ExperienceBadge = {
   label: string;
-  tone?: "blue" | "green";
 };
 
 export type ExperienceRoleGroup = {
@@ -42,7 +37,6 @@ export type ExperienceRoleGroup = {
 
 export type Experience = {
   id: string;
-  timelineLabel: string;
   company: string;
   role: string;
   period: string;
@@ -50,6 +44,7 @@ export type Experience = {
   employmentType?: string;
   badge?: ExperienceBadge;
   description: string;
+  /** Flat roles use `highlights`; roles with sub-positions use `roles`. */
   highlights?: string[];
   roles?: ExperienceRoleGroup[];
   tags: string[];
@@ -57,40 +52,7 @@ export type Experience = {
 
 export type SkillGroup = {
   name: string;
-  icon: SkillIconName;
   skills: string[];
-};
-
-export type ProjectLink = {
-  label: string;
-  href: string;
-  external?: boolean;
-};
-
-export type FeaturedProject = {
-  title: string;
-  role: string;
-  description: string;
-  notes: string[];
-  tags: string[];
-  links?: ProjectLink[];
-  linksNote?: string;
-};
-
-export type ProjectCard = {
-  label: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  notes?: string[];
-  tags: string[];
-  links: ProjectLink[];
-  variant?: "standard" | "placeholder";
-};
-
-export type ProjectsContent = {
-  featured: FeaturedProject;
-  cards: ProjectCard[];
 };
 
 export type EducationEntry = {
@@ -106,17 +68,6 @@ export type AboutContent = {
   certifications: string[];
 };
 
-export type ContactMethod = {
-  label: string;
-  value: string;
-  icon: SocialIconName;
-  href?: string;
-  copyValue?: string;
-};
-
 export type ContactContent = {
-  title: string;
-  eyebrow: string;
   description: string;
-  methods: ContactMethod[];
 };

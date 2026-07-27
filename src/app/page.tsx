@@ -1,7 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { WorkPreview } from "@/components/WorkPreview";
 import { work } from "@/data/work";
-import { about, contact, experiences, profile, skillGroups } from "@/data/portfolio";
+import { about, contact, experiences, hero, profile, skillGroups } from "@/data/portfolio";
 
 const approach = [
   {
@@ -35,15 +35,14 @@ export default function Home() {
         {/* Hero */}
         <section className="page hero" aria-label="Introduction">
           <p className="hero-kicker">
-            <span className="name">Andrii Maksymov</span>, Senior Frontend Engineer
+            <span className="name">{profile.name}</span>, {hero.title}
           </p>
           <h1>
-            Data-heavy product UIs, kept <em>maintainable</em>.
+            {hero.headline.before}
+            <em>{hero.headline.emphasis}</em>
+            {hero.headline.after}
           </h1>
-          <p className="hero-sub">
-            Nine years in web, five in React, TypeScript, and Next.js. I ship frontends end to end and modernize
-            the older ones without full rewrites.
-          </p>
+          <p className="hero-sub">{hero.description}</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#work">
               View work{" "}
@@ -51,7 +50,7 @@ export default function Home() {
                 &rarr;
               </span>
             </a>
-            <a className="btn btn-ghost" href="/Andrii_Maksymov_CV.pdf" download>
+            <a className="btn btn-ghost" href={profile.cvHref} download>
               Download CV
             </a>
           </div>
@@ -276,7 +275,7 @@ export default function Home() {
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="/Andrii_Maksymov_CV.pdf" download>
+              <a href={profile.cvHref} download>
                 Download CV
               </a>
             </div>
