@@ -38,29 +38,31 @@ export const hero: HeroContent = {
   nameLines: ["Andrii", "Maksymov"],
   title: "Senior Frontend Engineer",
   description:
-    "Nine years building production web applications, the last five focused on React, TypeScript, and Next.js. I work best on data-heavy product UIs and on moving older frontends onto modern footing without full rewrites.",
+    "Nine years building production web applications, the last five focused on React, TypeScript, and Next.js. I work best on data-heavy product UIs and design systems, and on moving older frontends onto modern footing without full rewrites.",
 };
 
 export const experiences: Experience[] = [
   {
     id: "exp-aivo",
     timelineLabel: "2024 - Now",
-    role: "Frontend Engineer",
+    role: "Senior Frontend Engineer",
     company: "Aivo",
     period: "Jun 2024 - Present",
     location: "Remote",
-    employmentType: "Contract · Part-time",
+    employmentType: "Contract · Primary engagement since Jun 2026",
     badge: { label: "Current", tone: "green" },
     description:
-      "Modernizing a live production frontend (types, server state, tooling) without freezing feature work.",
+      "Modernizing a live production audit platform (types, server state, tooling) without a rewrite, and without freezing feature work.",
     highlights: [
-      "Migrated the codebase to strict TypeScript, module by module, while it stayed in production.",
-      "Moved server state onto React Query and tore out the hand-rolled fetch, loading, and error code spread across components.",
-      "Drag-and-drop broke on the React 18 upgrade (react-beautiful-dnd is unmaintained), so replaced it with dnd-kit.",
-      "Unified a mix of Ant Design, older MUI, and SCSS Modules into a single MUI component set, with shared styles and design tokens.",
-      "Added Playwright coverage on the flows that caused the most regressions (auth, dashboards, account management, configuration, and document workflows), with unit tests on key component and business logic.",
+      "Led the migration from JavaScript to strict TypeScript and helped move React 17 to 18, module by module, while the app stayed in production and features kept shipping.",
+      "Made React Query the standard for server state, replacing manual Axios calls with reusable query hooks that put caching, loading and error handling, and retries in one place.",
+      "Architected and built the flagship data-analysis workspace on a feature-sliced architecture: advanced tables, saved views, working-paper annotations, and account mapping.",
+      "Replaced Redux with a leaner Zustand + React Query + URL state split, which cut the state layer down to something maintainable.",
+      "Unified three legacy UI stacks into a single MUI v7 design system, with shared components and design tokens, and took Ant Design out of the codebase entirely.",
+      "Drag-and-drop broke on the React 18 upgrade (react-beautiful-dnd is unmaintained), so replaced it with dnd-kit, which also improved accessibility and cut bundle size.",
+      "Built the frontend testing foundation from scratch (Playwright, Storybook, unit tests) and wired it into CI to protect the flows that caused the most regressions.",
     ],
-    tags: ["React", "TypeScript", "React Query", "Material UI", "dnd-kit", "Playwright"],
+    tags: ["React", "TypeScript", "React Query", "Zustand", "MUI v7", "dnd-kit", "Playwright", "Storybook"],
   },
   {
     id: "exp-movadex",
@@ -225,7 +227,7 @@ export const about: AboutContent = {
     "Most of my work has been data-heavy product UIs: analytics, dashboards, big configurable tables. Alongside that, the less glamorous parts I actually enjoy, like JavaScript-to-TypeScript migrations, shared component libraries, React Query, and getting real test coverage in place.",
     "I work across the stack when a feature needs it (Node, PostgreSQL, Prisma) and I'm used to remote, cross-functional teams. I lean on AI tools like Claude Code and Cursor for review, refactoring, and test generation, but I own the code that ships.",
   ],
-  values: ["Frontend ownership", "Legacy modernization", "Data-heavy UIs", "Performance & quality"],
+  values: ["Frontend ownership", "Legacy modernization", "Data-heavy UIs", "Design systems", "Performance & quality"],
   education: [
     {
       institution: "National University of Water Management and Natural Resources",

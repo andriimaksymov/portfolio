@@ -6,7 +6,7 @@ import "./globals.css";
 const url = "https://andriim.dev";
 const title = "Andrii Maksymov - Senior Frontend Engineer";
 const description =
-  "Senior Frontend Engineer with nine years in web development and five-plus focused on React, TypeScript, and Next.js. Data-heavy product UIs and legacy modernization.";
+  "Senior Frontend Engineer with nine years in web development and five-plus focused on React, TypeScript, and Next.js. Data-heavy product UIs, design systems, and legacy modernization.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "React",
     "TypeScript",
     "Next.js",
+    "Design Systems",
     "Frontend Architecture",
     "Web Performance",
     "React Query",
@@ -101,6 +102,7 @@ const jsonLd = {
     "React",
     "TypeScript",
     "Next.js",
+    "Design Systems",
     "Frontend Architecture",
     "Web Performance",
     "React Query",
