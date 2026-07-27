@@ -90,7 +90,7 @@ const jsonLd = {
   name: "Andrii Maksymov",
   jobTitle: "Senior Frontend Engineer",
   url,
-  email: "andrii.maksymov.1@gmail.com",
+  email: "andrii@andriim.dev",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Rivne",

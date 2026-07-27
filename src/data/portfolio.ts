@@ -12,7 +12,7 @@ import type {
 
 export const profile: Profile = {
   name: "Andrii Maksymov",
-  email: "andrii.maksymov.1@gmail.com",
+  email: "andrii@andriim.dev",
   github: "https://github.com/andriimaksymov",
   linkedin: "https://linkedin.com/in/maksymov-andrii",
   website: "https://andriim.dev",
