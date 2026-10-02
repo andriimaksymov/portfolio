@@ -24,7 +24,7 @@ export const hero: HeroContent = {
     after: ".",
   },
   description:
-    "Nine years in web, five in React, TypeScript, and Next.js. I ship data-heavy product UIs end to end, and pull older frontends onto modern footing while the team keeps shipping features.",
+    "Nine years in web, six in React, TypeScript, and Next.js. I ship data-heavy product UIs end to end, and pull older frontends onto modern footing while the team keeps shipping features.",
 };
 
 export const experiences: Experience[] = [
@@ -44,10 +44,10 @@ export const experiences: Experience[] = [
       "Architected and built the flagship data-analysis workspace on a feature-sliced architecture: advanced tables, saved views, working-paper annotations, and account mapping.",
       "Replaced Redux with a leaner Zustand + React Query + URL state split, which cut the state layer down to something maintainable.",
       "Unified three legacy UI stacks into a single MUI v7 design system, with shared components and design tokens, and took Ant Design out of the codebase entirely.",
-      "Drag-and-drop broke on the React 18 upgrade (react-beautiful-dnd is unmaintained), so replaced it with dnd-kit, which also improved accessibility and cut bundle size.",
+      "Added i18next with EN and DE to an app that had only ever been monolingual, and wrote the engineering docs the team works from: architecture, migration strategy, testing, and ADRs.",
       "Built the frontend testing foundation from scratch (Playwright, Storybook, unit tests) and wired it into CI to protect the flows that caused the most regressions.",
     ],
-    tags: ["React", "TypeScript", "React Query", "Zustand", "MUI v7", "dnd-kit", "Playwright", "Storybook"],
+    tags: ["React", "TypeScript", "React Query", "Zustand", "MUI v7", "i18next", "Playwright", "Storybook"],
   },
   {
     id: "exp-movadex",
@@ -60,7 +60,7 @@ export const experiences: Experience[] = [
       "Shipping React and Next.js products for international clients: multi-tenant SaaS, data-heavy dashboards, and B2B tools, usually as the frontend owner.",
     highlights: [
       "Led the frontend on a multi-tenant community-management SaaS in React 19 and TypeScript. Twelve months, about ten product domains, mine end to end.",
-      "Structured it by product domain over a typed React Query layer with optimistic updates. The refresh interceptor was the awkward part: retrying failed requests across separate user and admin sessions without racing itself.",
+      "Structured it by product domain over a typed React Query layer covering 200+ endpoints, on an HTTP client I owned: transparent JWT refresh and replay, exponential-backoff retries, and normalized typed errors.",
       "Built the product surface out: role-based access, invite onboarding, Google OAuth, a TipTap editor, drag-and-drop workflows, image cropping, and multi-step event forms.",
       "Sole frontend engineer on a humanitarian aid-logistics platform, delivered in six months, covering help requests and declarations through inventory, signed PDF transfer acts, and final reporting, across displaced-person, donor, and staff roles.",
       "Typed its API layer across 17 business domains on React Query and Zustand, with reusable MUI components, PDF generation, an interactive map of Ukraine, and EN/UK localization over 500+ strings.",
@@ -150,7 +150,7 @@ export const skillGroups: SkillGroup[] = [
 
 export const about: AboutContent = {
   paragraphs: [
-    "I'm a frontend engineer with nine years in web development, the last five focused on React, TypeScript, and Next.js. I'm as comfortable starting an app from scratch as I am pulling an older frontend onto modern footing without a full rewrite.",
+    "I'm a frontend engineer with nine years in web development, the last six focused on React, TypeScript, and Next.js. I'm as comfortable starting an app from scratch as I am pulling an older frontend onto modern footing without a full rewrite.",
     "Most of my work has been data-heavy product UIs: analytics, dashboards, big configurable tables. Alongside that, the less glamorous parts I actually enjoy, like JavaScript-to-TypeScript migrations, shared component libraries, React Query, and getting real test coverage in place.",
     "I work across the stack when a feature needs it (Node, PostgreSQL, Prisma) and I'm used to remote, cross-functional teams. I lean on AI tools like Claude Code and Cursor for review, refactoring, and test generation, but I own the code that ships.",
   ],
