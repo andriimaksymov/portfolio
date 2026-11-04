@@ -1,59 +1,58 @@
-import { Nav } from "@/components/Nav";
-import { WorkPreview } from "@/components/WorkPreview";
-import { work } from "@/data/work";
-import { about, contact, experiences, hero, profile, skillGroups } from "@/data/portfolio";
+import { CaseStudy } from "@/components/CaseStudy";
+import { ProjectCard } from "@/components/ProjectCard";
+import { SiteHeader } from "@/components/SiteHeader";
+import { about, contact, experiences, hero, practices, profile, skillGroups } from "@/data/portfolio";
+import { caseStudies, projects } from "@/data/work";
 
-const approach = [
-  {
-    title: "Modernize without stopping delivery",
-    text: "My best work is on live products: strict-TypeScript migrations, dependency swaps, and test coverage added while features keep shipping. No big-bang rewrites.",
-  },
-  {
-    title: "Own the frontend end to end",
-    text: "From planning and component APIs through release. I want to be accountable for how the screen behaves, not just the person who styled it.",
-  },
-  {
-    title: "Keep server state in one place",
-    text: "Caching, loading, errors, and retries belong in a single layer. React Query over fetch-and-useState scattered across a dozen components.",
-  },
-  {
-    title: "Test the paths that actually break",
-    text: "Not coverage for a number. Playwright on the handful of flows that keep regressing, so failures show up before merge instead of in production.",
-  },
-];
-
+/**
+ * One static page, rendered entirely on the server. There are no client
+ * components: navigation is plain anchors and everything else is HTML and CSS.
+ */
 export default function Home() {
   return (
     <>
-      <a className="skip" href="#work">
-        Skip to work
+      <a className="skip-link" href="#main">
+        Skip to content
       </a>
-      <span id="top" aria-hidden="true" />
-      <Nav />
+      <SiteHeader />
 
-      <main>
+      <main id="main" tabIndex={-1}>
         {/* Hero */}
-        <section className="page hero" aria-label="Introduction">
-          <p className="hero-kicker">
-            <span className="name">{profile.name}</span>, {hero.title}
-          </p>
-          <h1>
-            {hero.headline.before}
-            <em>{hero.headline.emphasis}</em>
-            {hero.headline.after}
+        <section className="page hero" id="top" aria-labelledby="hero-title">
+          <h1 id="hero-title">
+            {profile.name}
+            <span className="sr-only">, </span>
+            <span className="hero-role">{profile.role}</span>
           </h1>
-          <p className="hero-sub">{hero.description}</p>
-          <div className="hero-actions">
-            <a className="btn btn-primary" href="#work">
-              View work{" "}
-              <span className="arrow" aria-hidden="true">
-                &rarr;
-              </span>
-            </a>
-            <a className="btn btn-ghost" href={profile.cvHref} download>
-              Download CV
-            </a>
-          </div>
+          <p className="hero-stack">{profile.stack}</p>
+          <p className="hero-lead">{hero.lead}</p>
+          <ul className="hero-facts" aria-label="At a glance">
+            {hero.facts.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
+          </ul>
+          <ul className="actions" aria-label="Contact and CV">
+            <li>
+              <a className="btn btn-primary" href={profile.cvHref} download>
+                Download CV <span className="btn-note">PDF</span>
+              </a>
+            </li>
+            <li>
+              <a className="btn" href={`mailto:${profile.email}`}>
+                Email
+              </a>
+            </li>
+            <li>
+              <a className="btn" href={profile.linkedin}>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a className="btn" href={profile.github}>
+                GitHub
+              </a>
+            </li>
+          </ul>
         </section>
 
         {/* Selected work */}
@@ -62,232 +61,197 @@ export default function Home() {
             <h2 className="section-title" id="work-title">
               Selected work
             </h2>
-            <span className="section-note mono">{String(work.length).padStart(2, "0")} projects</span>
+            <p className="section-note">Client work is text only. Personal projects have screenshots and live links.</p>
           </div>
 
-          <ol className="work-list">
-            {work.map((entry, i) => {
-              const num = String(i + 1).padStart(2, "0");
+          {caseStudies.map((study) => (
+            <CaseStudy key={study.id} study={study} />
+          ))}
+
+          <div className="projects-head">
+            <h3 className="projects-title">Personal projects</h3>
+            <p className="projects-note">Built and run on my own, outside client work.</p>
+          </div>
+          <ul className="projects">
+            {projects.map((project) => (
+              <li key={project.id}>
+                <ProjectCard project={project} />
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Experience */}
+        <section className="page section" id="experience" aria-labelledby="experience-title">
+          <div className="section-head">
+            <h2 className="section-title" id="experience-title">
+              Experience
+            </h2>
+            <p className="section-note">2017 to now · fully remote since 2022</p>
+          </div>
+          <ol className="jobs">
+            {experiences.map((job) => {
+              const titleId = `${job.id}-title`;
               return (
-                <li key={entry.id}>
-                  <div className="work-row">
-                    <span className="work-num mono">{num}</span>
-                    <div className="work-main">
-                      <h3 className="work-title">
-                        {entry.href ? (
-                          <a
-                            className="work-title-link"
-                            href={entry.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {entry.title}
-                            <span className="work-arrow" aria-hidden="true">
-                              {" "}
-                              &rarr;
-                            </span>
-                          </a>
-                        ) : (
-                          entry.title
-                        )}
+                <li key={job.id}>
+                  <article className="job" aria-labelledby={titleId}>
+                    <p className="job-when">
+                      {job.period}
+                      {job.location && (
+                        <>
+                          <br />
+                          {job.location}
+                        </>
+                      )}
+                    </p>
+                    <div>
+                      <h3 className="job-title" id={titleId}>
+                        {job.role}, <span className="job-company">{job.company}</span>
+                        {job.companyNote && <span className="job-company"> ({job.companyNote})</span>}
                       </h3>
-                      <p className="work-blurb">{entry.blurb}</p>
-                      <div className="work-tags">
-                        {entry.tags.map((t) => (
-                          <span className="work-tag mono" key={t}>
-                            {t}
-                          </span>
+                      {job.meta.map((m) => (
+                        <p className="job-meta" key={m}>
+                          {m}
+                        </p>
+                      ))}
+                      {job.stack && (
+                        <p className="job-stack">
+                          {job.stack.label}: {job.stack.value}
+                        </p>
+                      )}
+                      <ul className="job-points">
+                        {job.points.map((point) => (
+                          <li key={point}>{point}</li>
                         ))}
-                      </div>
-                      {entry.image && (
-                        <WorkPreview
-                          num={num}
-                          title={entry.title}
-                          year={entry.year}
-                          meta={entry.meta}
-                          image={entry.image}
-                          imageAlt={entry.imageAlt ?? `${entry.title} screenshot`}
-                          href={entry.href}
-                        />
+                      </ul>
+                      {job.caseStudyId && (
+                        <a className="job-link" href={`#case-${job.caseStudyId}`}>
+                          Read the case study<span className="sr-only"> for {job.company}</span>
+                        </a>
                       )}
                     </div>
-                    <span className="work-meta mono">
-                      {entry.meta}
-                      <br />
-                      {entry.year}
-                    </span>
-                  </div>
+                  </article>
                 </li>
               );
             })}
           </ol>
         </section>
 
-        {/* Experience */}
-        <section className="page section" id="experience" aria-labelledby="exp-title">
-          <div className="section-head">
-            <h2 className="section-title" id="exp-title">
-              Experience
-            </h2>
-            <span className="section-note mono">2017 to now</span>
-          </div>
-
-          <div className="exp-list">
-            {experiences.map((e) => (
-              <article className="exp" key={e.id}>
-                <div className="exp-top">
-                  <h3 className="exp-role">
-                    {e.role} <span className="exp-co">{e.company}</span>
-                  </h3>
-                  <span className="exp-period mono">{e.period}</span>
-                </div>
-                <div className="exp-meta mono">
-                  <span>{e.location}</span>
-                  {e.employmentType && <span>{e.employmentType}</span>}
-                  {e.badge && <span className="exp-badge">{e.badge.label}</span>}
-                </div>
-                <p className="exp-desc">{e.description}</p>
-                {e.highlights && (
-                  <ul className="exp-points">
-                    {e.highlights.map((h) => (
-                      <li key={h}>{h}</li>
-                    ))}
-                  </ul>
-                )}
-                {e.roles?.map((r) => (
-                  <div className="exp-subrole" key={r.role}>
-                    <div className="exp-subrole-top">
-                      <h4>{r.role}</h4>
-                      <span className="mono">{r.period}</span>
-                    </div>
-                    <ul className="exp-points">
-                      {r.highlights.map((h) => (
-                        <li key={h}>{h}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-                <div className="exp-tags mono">
-                  {e.tags.map((t) => (
-                    <span key={t}>{t}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
         {/* How I work */}
-        <section className="page section" id="approach" aria-labelledby="app-title">
+        <section className="page section" id="how-i-work" aria-labelledby="how-title">
           <div className="section-head">
-            <h2 className="section-title" id="app-title">
+            <h2 className="section-title" id="how-title">
               How I work
             </h2>
           </div>
-          <ol className="approach-list">
-            {approach.map((p, i) => (
-              <li className="approach" key={p.title}>
-                <span className="approach-num mono">{String(i + 1).padStart(2, "0")}</span>
-                <div className="approach-body">
-                  <h3 className="approach-title">{p.title}</h3>
-                  <p className="approach-text">{p.text}</p>
+          <ul className="practices">
+            {practices.map((practice) => (
+              <li className="practice" key={practice.id}>
+                <h3 className="practice-title">{practice.title}</h3>
+                <div className="practice-body">
+                  {practice.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
                 </div>
               </li>
             ))}
-          </ol>
+          </ul>
         </section>
 
         {/* Skills */}
-        <section className="page section" id="skills" aria-labelledby="sk-title">
+        <section className="page section" id="skills" aria-labelledby="skills-title">
           <div className="section-head">
-            <h2 className="section-title" id="sk-title">
+            <h2 className="section-title" id="skills-title">
               Skills
             </h2>
           </div>
-          <div className="skills-grid">
-            {skillGroups.map((g) => (
-              <div className="skill-group" key={g.name}>
-                <h3 className="skill-cat mono">{g.name}</h3>
-                <p className="skill-items">{g.skills.join(", ")}</p>
+          <dl className="skills">
+            {skillGroups.map((group) => (
+              <div className="skill" key={group.name}>
+                <dt>{group.name}</dt>
+                <dd>{group.skills.join(", ")}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </section>
 
-        {/* Background */}
-        <section className="page section" id="about" aria-labelledby="ab-title">
+        {/* About */}
+        <section className="page section" id="about" aria-labelledby="about-title">
           <div className="section-head">
-            <h2 className="section-title" id="ab-title">
-              Background
+            <h2 className="section-title" id="about-title">
+              About
             </h2>
           </div>
-          <div className="about-grid">
+          <div className="about">
             <div className="about-prose">
               {about.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </div>
-            <aside className="about-side">
-              <div className="about-block">
-                <h3 className="about-label mono">Education</h3>
-                {about.education.map((ed) => (
-                  <p className="about-item" key={ed.institution}>
-                    <strong>{ed.credential}</strong>
-                    <br />
-                    <span className="muted">
-                      {ed.institution}, {ed.period}
-                    </span>
-                  </p>
+            <dl className="about-facts">
+              <div>
+                <dt>Based in</dt>
+                <dd>{about.location}</dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd>
+                  {about.education.credential}
+                  <span className="sub">
+                    {about.education.institution}, {about.education.period}
+                  </span>
+                </dd>
+              </div>
+              <div>
+                <dt>Languages</dt>
+                {about.languages.map((language) => (
+                  <dd key={language}>{language}</dd>
                 ))}
               </div>
-              <div className="about-block">
-                <h3 className="about-label mono">Certifications</h3>
-                <ul className="about-certs">
-                  {about.certifications.map((c) => (
-                    <li key={c}>{c}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="about-block">
-                <h3 className="about-label mono">Focus</h3>
-                <p className="muted">{about.values.join(", ")}</p>
-              </div>
-            </aside>
+            </dl>
           </div>
         </section>
 
         {/* Contact */}
-        <section className="page section section-contact" id="contact" aria-labelledby="ct-title">
+        <section className="page section section-contact" id="contact" aria-labelledby="contact-title">
           <div className="section-head">
-            <h2 className="section-title" id="ct-title">
-              Get in touch
+            <h2 className="section-title" id="contact-title">
+              Contact
             </h2>
           </div>
-          <p className="contact-lead">{contact.description}</p>
-          <div className="contact-links">
-            <a className="contact-email" href={`mailto:${profile.email}`}>
-              {profile.email}
-            </a>
-            <div className="contact-row mono">
-              <a href={profile.github} target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+          <p className="contact-lead">{contact.lead}</p>
+          <a className="contact-email" href={`mailto:${profile.email}`}>
+            {profile.email}
+          </a>
+          <p className="contact-engagement">{contact.engagement}</p>
+          <ul className="actions" aria-label="Elsewhere">
+            <li>
+              <a className="btn" href={profile.linkedin}>
                 LinkedIn
               </a>
-              <a href={profile.cvHref} download>
-                Download CV
+            </li>
+            <li>
+              <a className="btn" href={profile.github}>
+                GitHub
               </a>
-            </div>
-          </div>
+            </li>
+            <li>
+              <a className="btn" href={profile.cvHref} download>
+                Download CV <span className="btn-note">PDF</span>
+              </a>
+            </li>
+          </ul>
         </section>
       </main>
 
-      <footer className="page foot">
-        <div className="foot-inner">
-          <span>Andrii Maksymov, {new Date().getFullYear()}</span>
-          <span>Rivne, Ukraine, remote</span>
-          <span>Built with Next.js</span>
+      <footer className="site-footer">
+        <div className="page site-footer-inner">
+          <span>
+            {profile.name} · {about.location}
+          </span>
+          <span>
+            Static site built with Next.js. <a href={profile.sourceHref}>Source on GitHub</a>
+          </span>
         </div>
       </footer>
     </>

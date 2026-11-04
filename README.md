@@ -1,125 +1,106 @@
-# Andrii Maksymov Portfolio
+# andriim.dev
 
 [![CI](https://github.com/andriimaksymov/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/andriimaksymov/portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Personal portfolio for **Andrii Maksymov**, Senior Frontend Engineer. Built with Next.js (App Router, React Server Components), React 19, TypeScript, and custom CSS. The design is a light, editorial, technical direction ("The Index"): a precise grotesque-on-paper type system, one restrained accent, hairline structure, and no template decoration.
+Portfolio site for **Andrii Maksymov**, Senior Frontend Engineer (React, TypeScript, Next.js). The site is also a work sample, so it's kept small, fast and accessible, and it's tested in CI.
 
-## Quick Facts
-
-| Item | Details |
+| | |
 | --- | --- |
 | Live site | <https://andriim.dev> |
-| Stack | Next.js 16 (App Router, RSC), React 19, TypeScript, custom CSS |
-| Fonts | Geist Sans and Geist Mono, self-hosted via `next/font` |
+| Stack | Next.js 16 (App Router, static export), React 19, TypeScript, custom CSS |
+| Client components | None. The page is rendered on the server at build time; navigation is plain anchors |
+| Fonts | Geist Sans and Geist Mono, self-hosted (`src/app/fonts/`, SIL OFL) |
+| Hosting | Cloudflare Pages, serving `out/` |
 | Node.js | `^20.19.0` or `>=22.12.0` |
-| App type | Statically prerenderable portfolio (no runtime backend) |
-| Build output | `.next` (standard Next.js build) |
-| Environment variables | None required |
-| License | MIT |
+| Runtime dependencies | `next`, `react`, `react-dom` |
 
 ## Commands
 
-| Command | Purpose |
+| Command | What it does |
 | --- | --- |
-| `npm install` | Install dependencies |
-| `npm run dev` | Start Next.js dev server at `http://localhost:3000/` |
-| `npm run build` | Type-check and create the production build |
-| `npm start` | Serve the production build locally |
-| `npm run typecheck` | Run TypeScript checks (`tsc --noEmit`) |
-| `npm run audit` | Check npm dependencies for moderate-or-higher vulnerabilities |
+| `npm run dev` | Dev server at `http://localhost:3000` |
+| `npm run build` | Static export to `out/` |
+| `npm run serve` | Serve `out/` at `http://localhost:4173` (gzip on, like production) |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run lint` | ESLint (`eslint-config-next`, core web vitals + TypeScript) |
+| `npm run test:e2e` | Playwright + axe smoke tests against `out/` (build first) |
+| `npm run check` | Typecheck, lint, build and the smoke tests, in that order |
+| `npm run screenshots` | Re-capture the personal projects' live sites into `public/work/*.webp` |
+| `npm run og` | Re-render the social preview card, `public/og.png` |
+| `npm run audit` | `npm audit` at high severity |
 
-## Project Structure
+First-time setup for the tests: `npx playwright install chromium`.
 
-```text
-.
-├── public/
-│   ├── Andrii_Maksymov_CV.pdf        # downloadable CV
-│   ├── work/                         # real screenshots of live projects
-│   └── favicon and manifest assets
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx                # root layout: fonts + metadata / OpenGraph
-│   │   ├── page.tsx                  # the single-page composition
-│   │   └── globals.css               # design tokens + all styles
-│   ├── components/
-│   │   └── Nav.tsx                   # client island (scroll-aware nav)
-│   ├── data/
-│   │   ├── portfolio.ts              # experience, skills, about, contact
-│   │   └── work.ts                   # selected work / projects
-│   └── types.ts
-├── next.config.ts
-├── package.json
-└── tsconfig.json
-```
-
-## Architecture
-
-Content is separated from presentation:
-
-- `src/data/portfolio.ts` and `src/data/work.ts` hold the content model (profile, experience, skills, background, contact, and selected work).
-- `src/app/page.tsx` composes the sections and is a React Server Component by default; only interactive pieces are client islands.
-- `src/components/Nav.tsx` is the one client component (a scroll-aware sticky nav using `IntersectionObserver`, not a scroll listener).
-- `src/app/globals.css` defines the design system: semantic color tokens (OKLCH), a type scale, spacing scale, one radius, and motion easing curves.
-
-Server Components render the static layout; interactivity stays isolated in client leaves. This keeps client JavaScript minimal.
-
-## Content Updates
-
-Most visible text lives in:
+## Structure
 
 ```text
-src/data/portfolio.ts    # experience, skills, background, contact
-src/data/work.ts         # selected work / projects
+src/
+  app/
+    layout.tsx       metadata, Open Graph, JSON-LD Person, fonts
+    page.tsx         the single page: hero, work, experience, how I work, skills, about, contact
+    globals.css      design tokens (OKLCH, light + dark) and all styles
+    fonts.ts         self-hosted Geist; only the sans face is preloaded
+    robots.ts, sitemap.ts, manifest.ts
+  components/        SiteHeader, CaseStudy, ProjectCard, Readable (all server components)
+  data/
+    portfolio.ts     profile, hero facts, experience, how I work, skills, about, contact
+    work.ts          case studies (client work, text only) and personal projects
+    nav.ts           primary navigation
+  types.ts           the content model
+public/
+  Andrii_Maksymov_CV.pdf   the published CV (keep this filename: other sites link to it)
+  work/                    personal-project screenshots, 640 and 1280 px WebP
+  og.png                   1200x630 social card
+scripts/             serve.mjs, screenshots.mjs, og.mjs
+tests/smoke.spec.ts  Playwright + axe
 ```
 
-The downloadable CV is:
+## Updating content
 
-```text
-public/Andrii_Maksymov_CV.pdf
-```
+All copy lives in `src/data/`. The source of truth is the current frontend CV, so update the CV first, then the data files.
 
-Replace that file to update the CV while keeping the same filename, or change `profile.cvHref` in `src/data/portfolio.ts`.
+**Writing rules** (the smoke test enforces the first two):
 
-## Verification
+- No em dashes, and none of these words: spearheaded, leveraged, utilized, synergy, passionate, results-driven, dynamic, cutting-edge, seamless, robust, innovative, delve, orchestrated, fostered, pivotal, testament, landscape, "proven track record".
+- Every number and claim must match the CV. Don't add facts that aren't in it.
+- Client work is text only. Name only aivo Revisions AG and Movadex; the Movadex SaaS stays unnamed. No screenshots or data from client products.
+- AI tools appear only together with the checks that keep them honest (tests, a separate review, lint and typecheck before merge).
 
-Before publishing changes, run:
+**CV:** replace `public/Andrii_Maksymov_CV.pdf` and keep the filename. Publish only the frontend CV.
 
-```bash
-npm run build
-npm run audit
-```
+**Screenshots:** personal projects only. Run `npm run screenshots`, then check each image for anything you wouldn't put your name to.
 
-`npm run build` type-checks and builds the app; the CI workflow runs the same build on pushes to `main` and on pull requests.
+## Quality checks
 
-## Deployment
+CI (`.github/workflows/ci.yml`) runs typecheck, lint, build, and the smoke tests on every push to `main` and every pull request. The smoke tests check that:
 
-This is a Next.js App Router app. Two supported paths:
+- the page renders the name, role and the four main actions (CV, email, LinkedIn, GitHub);
+- every nav link scrolls to its section, on desktop and at 360 px;
+- `/Andrii_Maksymov_CV.pdf` returns a PDF;
+- axe finds no WCAG 2.2 AA or best-practice violations in light mode, in dark mode and at 360 px, and there's no sideways scroll at 360 px;
+- the skip link is the first tab stop and moves focus to the main content;
+- every image has alt text and explicit dimensions;
+- the copy follows the writing rules.
 
-- **Vercel (recommended).** Zero configuration for Next.js. Push the repo and Vercel builds and serves it, including font optimization and metadata.
-- **Static host (Cloudflare Pages, GitHub Pages, Netlify).** The site is fully prerendered, so it can be exported to static HTML: set `output: "export"` in `next.config.ts` (and `images: { unoptimized: true }` if `next/image` is added later), then configure the host with build command `npm run build`, output directory `out`, and `NODE_VERSION` `22`.
+Design decisions that keep the site fast:
 
-## Public Data And Safety
+- No client components, no animation library, no image optimizer. The JavaScript that ships is Next.js's own runtime.
+- CSS is inlined (`experimental.inlineCss`), so nothing blocks rendering.
+- Only the sans font is preloaded. Mono is small metadata text and can arrive later.
+- Screenshots are pre-sized WebP with `width`/`height` and `loading="lazy"`.
+- Motion is limited to short color transitions, and `prefers-reduced-motion` turns those and smooth scrolling off.
 
-This repository intentionally includes public portfolio information:
+## Deploying to Cloudflare Pages
 
-- Name and professional positioning
-- Public email address
-- LinkedIn and GitHub profile URLs
-- Portfolio URL
-- Downloadable CV PDF
-- Work experience, skills, and selected project descriptions
+The site is a static export, so Pages only serves files. Settings:
 
-There is no backend, database, authentication layer, payment integration, or private runtime configuration in this app. See [SECURITY.md](SECURITY.md) for security posture and reporting guidance.
+- Build command: `npm run build`
+- Build output directory: `out`
+- Environment variable: `NODE_VERSION` = `22`
 
-## GitHub Repository Details
-
-Recommended GitHub About settings:
-
-- Description: `Senior Frontend Engineer portfolio built with Next.js, React, and TypeScript.`
-- Website: `https://andriim.dev`
-- Topics: `portfolio`, `nextjs`, `react`, `typescript`, `frontend-architecture`, `frontend`, `personal-site`
+Pushing to `main` deploys, if the project is connected to the repo. Otherwise build locally and upload `out/` with `npx wrangler pages deploy out --project-name <project>`.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT, see [LICENSE](LICENSE). Geist fonts: SIL Open Font License, see `src/app/fonts/LICENSE-Geist.txt`.
