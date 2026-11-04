@@ -2,7 +2,7 @@
   "name": "andrii-maksymov-portfolio",
   "private": true,
   "version": "0.1.0",
-  "description": "Senior Frontend Engineer and Frontend Architect portfolio built with React, TypeScript, Vite, and custom CSS.",
+  "description": "Andrii Maksymov's portfolio (andriim.dev): a static Next.js site with typed content, no client components, and Playwright + axe checks.",
   "author": "Andrii Maksymov",
   "license": "MIT",
   "repository": {
@@ -28,22 +28,28 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "serve": "node scripts/serve.mjs",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm run lint && npm run build && npm run test:e2e",
+    "screenshots": "node scripts/screenshots.mjs",
+    "og": "node scripts/og.mjs",
     "audit": "npm audit --audit-level=high"
   },
   "dependencies": {
-    "geist": "^1.7.2",
-    "motion": "^12.42.2",
     "next": "^16.2.10",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
     "@types/node": "^22.20.0",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.10",
     "typescript": "^5.6.3"
   }
 }

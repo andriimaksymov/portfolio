@@ -1,43 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { profile } from "@/data/portfolio";
+import { geistMono, geistSans } from "./fonts";
 import "./globals.css";
 
-const url = "https://andriim.dev";
-const title = "Andrii Maksymov - Senior Frontend Engineer";
+const url = profile.website;
+const title = `${profile.name} · ${profile.role}`;
 const description =
-  "Senior Frontend Engineer with nine years in web development and six focused on React, TypeScript, and Next.js. Data-heavy product UIs, design systems, and legacy modernization.";
+  "Senior frontend engineer, 9+ years in web development, 6 in React and TypeScript, mostly on data-heavy B2B SaaS. Based in Ukraine, remote, open to roles worldwide.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
-  title: {
-    default: title,
-    template: "%s - Andrii Maksymov",
-  },
+  title,
   description,
-  applicationName: "Andrii Maksymov",
-  authors: [{ name: "Andrii Maksymov", url }],
-  creator: "Andrii Maksymov",
-  publisher: "Andrii Maksymov",
-  category: "technology",
-  keywords: [
-    "Andrii Maksymov",
-    "Senior Frontend Engineer",
-    "Frontend Engineer",
-    "React",
-    "TypeScript",
-    "Next.js",
-    "Design Systems",
-    "Frontend Architecture",
-    "Web Performance",
-    "React Query",
-    "Remote",
-  ],
-  alternates: { canonical: url },
+  applicationName: profile.name,
+  authors: [{ name: profile.name, url }],
+  creator: profile.name,
+  alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
+    type: "profile",
     url,
-    siteName: "Andrii Maksymov",
+    siteName: profile.name,
     title,
     description,
     locale: "en_US",
@@ -46,7 +28,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Andrii Maksymov, Senior Frontend Engineer. React, TypeScript, Next.js.",
+        alt: `${profile.name}, ${profile.role}. ${profile.stack}.`,
       },
     ],
   },
@@ -56,17 +38,7 @@ export const metadata: Metadata = {
     description,
     images: ["/og.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
+  robots: { index: true, follow: true },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -79,8 +51,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FBFBF9",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
+    { media: "(prefers-color-scheme: dark)", color: "#101214" },
+  ],
+  colorScheme: "light dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -88,31 +63,18 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Andrii Maksymov",
-  jobTitle: "Senior Frontend Engineer",
+  name: profile.name,
+  jobTitle: profile.role,
   url,
-  email: "andrii@andriim.dev",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Rivne",
-    addressCountry: "UA",
-  },
-  sameAs: ["https://github.com/andriimaksymov", "https://linkedin.com/in/maksymov-andrii"],
-  knowsAbout: [
-    "React",
-    "TypeScript",
-    "Next.js",
-    "Design Systems",
-    "Frontend Architecture",
-    "Web Performance",
-    "React Query",
-    "Data visualization",
-  ],
+  email: `mailto:${profile.email}`,
+  address: { "@type": "PostalAddress", addressCountry: "UA" },
+  sameAs: [profile.linkedin, profile.github],
+  knowsAbout: ["React", "TypeScript", "Next.js", "TanStack Query", "Design systems", "Frontend testing", "Web accessibility"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
