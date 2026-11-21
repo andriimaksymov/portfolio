@@ -21,7 +21,7 @@ export const profile: Profile = {
 };
 
 export const hero: Hero = {
-  lead: "I build frontends for data-heavy B2B SaaS. On several products I've been the founding, sole or lead frontend engineer, owning the architecture, the typing and the tests.",
+  lead: "I build frontends for data-heavy B2B SaaS. On several products I've been the founding, sole or lead frontend engineer, in charge of the architecture, types and tests.",
   facts: [
     "9+ years in web development, 6 in React and TypeScript",
     "Ukraine, UTC+2/+3",
@@ -46,9 +46,10 @@ export const experiences: Experience[] = [
       value: "React 18, TypeScript, TanStack Query, Zustand, MUI, React Router, Storybook, Jest, Playwright, AWS Amplify",
     },
     points: [
-      "Led the frontend of the data-analysis workspace and took the app from 11% to 99% strict TypeScript. Set up Playwright, wrote all but one of its end-to-end specs, and wrote over 80% of the frontend test files.",
-      "Wrote the agent guides, two shared skills and the gate policy that AI-assisted work goes through. Test coverage rose from 31% to 67%.",
-      "650+ merged PRs, over half of the repo's total. I own the frontend CI/CD (GitHub Actions, AWS Amplify) and wrote the testing and architecture docs plus three decision records (ADRs).",
+      "Led the frontend of the data-analysis workspace and took the app from 11% to 99% strict TypeScript.",
+      "Set up Playwright and wrote all but one of its end-to-end specs. Over 80% of the frontend test files are mine.",
+      "Wrote the agent guides, two shared skills and the gate policy that AI-assisted work goes through.",
+      "650+ merged PRs, over half of the repo's total. I own the frontend CI/CD (GitHub Actions, AWS Amplify).",
     ],
     caseStudyId: "aivo",
   },
@@ -65,10 +66,10 @@ export const experiences: Experience[] = [
       value: "React 19, TypeScript, Next.js, Vite, Tailwind, MUI, TanStack Query, Zustand",
     },
     points: [
-      "Founding frontend engineer on Netcito, a multi-tenant peer-forum SaaS for business executives, from first commit to production. I wrote 93% of its 52k lines of TypeScript.",
-      "Sole frontend engineer on hope-platform.org, a humanitarian aid-logistics platform delivered in six months. Displaced people request aid, partner organizations and volunteers take requests and run events, and admins manage inventory, transfer acts and PDF aid reports. Three role-based cabinets, a regions map, EN/UK.",
+      "Founding frontend engineer on Netcito, a multi-tenant peer-forum SaaS for business executives. I wrote 93% of its 52k lines of TypeScript.",
+      "Sole frontend engineer on hope-platform.org, a humanitarian aid-logistics platform delivered in six months. Displaced people request aid, partner organizations and volunteers take requests and run events, and admins manage inventory, transfer acts and PDF aid reports. Each role gets its own cabinet. There's a regions map, and the UI is in English and Ukrainian.",
       "Also a customer-facing analytics platform, a German-market Next.js SSR/SSG search site (Lighthouse 90+, LCP under 1 s) and a Payload CMS and Stripe store on the Next.js App Router.",
-      "Supported junior developers for a short period, sharing practices and helping them through their tasks.",
+      "Mentored junior developers for a short period.",
     ],
     caseStudyId: "saas",
   },
@@ -79,7 +80,7 @@ export const experiences: Experience[] = [
     period: "Oct 2021 – Apr 2022",
     meta: [],
     points: [
-      "Refactored a Next.js beauty-services platform and built landing pages that scored Lighthouse 92+ with green Core Web Vitals. Also built CRM features and took part in technical planning.",
+      "Refactored a Next.js beauty-services platform and built landing pages that scored Lighthouse 92+ with green Core Web Vitals. Also built CRM features.",
     ],
   },
   {
@@ -100,14 +101,14 @@ export const practices: Practice[] = [
     id: "remote",
     title: "Remote, and mostly in writing",
     paragraphs: [
-      "I've worked fully remote since 2022. Most coordination happens in GitHub issues, PR descriptions and Slack, with a few calls a week. I open issues for what I find and validate the ones assigned to me. On aivo in 2026 that came to 42 issues opened and 121 threads commented on.",
+      "I've worked fully remote since 2022. Most coordination happens in GitHub issues, PR descriptions and Slack, with a few calls a week. I open issues for what I find and validate the ones assigned to me. On aivo, from January to early November 2026, I opened 42 issues and commented on 121 threads.",
     ],
   },
   {
     id: "ai",
     title: "AI agents, under the same checks as my own code",
     paragraphs: [
-      "I use Claude Code and Codex every day. Their output goes through the same gates as code I write by hand: tests on every commit, a light gate on each PR, and a full gate every night that records what ran. I can defend every line that ships.",
+      "I use Claude Code and Codex every day. Their output has to pass the same checks as code I write by hand: tests on every commit, a light gate on each PR and a full gate every night that records what ran.",
       "On aivo I wrote the agent guides (AGENTS.md, CLAUDE.md, ARCHITECTURE.md), two shared skills and that gate policy. Agents work in parallel git worktrees. Measured test coverage went from 31% to 67% between July and October 2026 while I worked this way.",
     ],
   },
@@ -115,7 +116,7 @@ export const practices: Practice[] = [
     id: "quality",
     title: "Checks that ratchet",
     paragraphs: [
-      "On aivo I turned the quality rules into checks. The enforced coverage floor went from 28% to 64%, set a couple of points under the measured value and never lowered. Inline query keys are a lint error. axe checks every Storybook story in CI, and a story that isn't on the known-failure list fails on any violation.",
+      "I raised aivo's enforced coverage floor from 28% to 64%. It sits a couple of points under the measured value and never goes down. Any Storybook story with an axe violation fails CI unless it's already on the known-failure list.",
       "Decisions get written down: the testing and architecture docs are mine, and so are three of the repo's decision records (ADRs).",
     ],
   },

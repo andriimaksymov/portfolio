@@ -15,39 +15,39 @@ export const caseStudies: CaseStudy[] = [
     org: "aivo Revisions AG",
     role: "Senior Frontend Engineer",
     period: "Jun 2024 – Present",
-    confidentiality: "Text only: the product holds clients' financial ledgers, so there are no screenshots here.",
+    confidentiality: "The product holds clients' financial ledgers, so there are no screenshots.",
     context: [
       "aivo is a Swiss audit SaaS based in Zurich. When I joined in June 2024, its frontend was a four-year-old React 17 app, mostly JavaScript, with three styling stacks, hand-rolled data fetching and no test suite.",
-      "It works with real client ledgers, and feature work couldn't pause while the foundations changed. So none of what follows happened in a rewrite branch. It went in module by module on the live app.",
+      "Feature work couldn't pause while the foundations changed, so everything below went in module by module on the live app.",
     ],
     points: [
       {
         label: "Data-analysis workspace",
-        text: "I led the frontend of the product's new module for audit data work outside Excel: ledger import, validation, account mapping, pivot tables and saved views. Its structure is now the template for new features.",
+        text: "Led the frontend of a new module for working with audit data outside Excel: ledger import, validation, account mapping, pivot tables and saved views. Its structure is now the template for new features.",
       },
       {
-        label: "Strict TypeScript, no freeze",
+        label: "TypeScript migration",
         text: "Took the app from 11% to 99% strict TypeScript in six milestones while features kept shipping, and ran the React 17 to 18 upgrade.",
       },
       {
-        label: "Tests that check the figures",
+        label: "Testing",
         text: "Set up Playwright and wrote all but one of its end-to-end specs, plus over 80% of the frontend test files. The import spec had 170 assertions, and not one of them checked a figure. I added a test that compares every imported account total against an independent calculation.",
       },
       {
         label: "Server state and design system",
-        text: "Moved all server state to TanStack Query, with query-key factories and inline keys banned by lint. Replaced Redux with Zustand and URL state, and merged three styling stacks into one MUI design system of about 50 components.",
+        text: "Moved all server state to TanStack Query, with query-key factories and inline keys banned by lint. Replaced Redux with Zustand and URL state. Merged three styling stacks into one MUI design system of about 50 components.",
       },
       {
         label: "API contracts",
-        text: "Added Zod validation on API responses and a contract test registry checked against the OpenAPI spec. It caught three places where the client had silently drifted from the API.",
+        text: "Added Zod validation on API responses and a contract test registry checked against the OpenAPI spec. It caught three places where the client had drifted from the API.",
       },
       {
         label: "Performance and accessibility",
-        text: "Fixed an editor render loop that hit about 400 re-renders per second, and virtualized the ledger table. In CI, axe checks every Storybook story, and a story that isn't on the known-failure list fails on any violation.",
+        text: "Fixed an editor render loop that hit about 400 re-renders per second, and virtualized the ledger table. In CI, axe checks every Storybook story.",
       },
     ],
     metrics: [
-      { value: "11% → 99%", label: "strict TypeScript on a live app, no feature freeze" },
+      { value: "11% → 99%", label: "strict TypeScript, in six milestones" },
       { value: "80%+", label: "of the frontend test files written by me" },
       { value: "31% → 67%", label: "measured test coverage, Jul–Oct 2026" },
       { value: "650+", label: "merged PRs, over half of the repo's total" },
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Founding frontend engineer on a multi-tenant SaaS",
     org: "Movadex",
     role: "Senior Frontend Engineer",
-    confidentiality: "Text only: a Movadex client's product, so there are no screenshots.",
+    confidentiality: "A Movadex client's product, so there are no screenshots.",
     context: [
       "Netcito is a peer-forum SaaS for business executives, built at Movadex for a client. I wrote the first commit and took it to production.",
     ],
@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         label: "Product scope",
-        text: "The super-admin panel, meeting-cycle forms, engagement analytics, a rich-text community feed and data import with row-level validation, plus Google sign-in and invite onboarding.",
+        text: "Built the super-admin panel, meeting-cycle forms, engagement analytics, a rich-text community feed and data import with row-level validation, plus Google sign-in and invite onboarding.",
       },
       {
         label: "Multi-tenancy",
@@ -78,18 +78,16 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         label: "API layer",
-        text: "A typed TanStack Query layer over 200+ endpoints, and the HTTP client under it: silent JWT refresh with request replay, retries with backoff, and normalized typed errors.",
+        text: "Wrote a typed TanStack Query layer over 200+ endpoints and the HTTP client under it: silent JWT refresh with request replay, retries with backoff and normalized typed errors.",
       },
       {
         label: "AI features",
-        text: "Meeting analysis, action-item extraction and reminder drafts on OpenAI, Gemini and Groq, behind one provider interface with ordered fallback and per-attempt timeouts.",
+        text: "Shipped meeting analysis, action-item extraction and reminder drafts on OpenAI, Gemini and Groq, behind one provider interface with ordered fallback and per-attempt timeouts.",
       },
     ],
     metrics: [
-      { value: "52k", label: "lines of TypeScript, first commit to production" },
-      { value: "93%", label: "of those lines written by me" },
+      { value: "93%", label: "of its 52k lines of TypeScript written by me" },
       { value: "200+", label: "endpoints behind one typed API layer" },
-      { value: "3", label: "LLM providers behind one interface, with ordered fallback" },
     ],
     stack: ["React 19", "TypeScript", "Vite", "Tailwind", "TanStack Query"],
   },
@@ -104,7 +102,7 @@ export const projects: Project[] = [
     summary: "Scores a developer's GitHub, LinkedIn and résumé evidence, then explains the score.",
     details: [
       "A React 19 and NestJS 11 monorepo on PostgreSQL and Prisma. Scoring is deterministic and kept apart from the AI explanations.",
-      "The LLM layer falls back across four providers, with JSON-schema output, Zod validation and groundedness checks. With no API keys at all, the app still works.",
+      "The LLM layer falls back across four providers, with JSON-schema output, Zod validation and groundedness checks. The app still works with no API keys.",
     ],
     stack: ["React 19", "NestJS 11", "PostgreSQL", "Prisma", "Zod"],
     links: [
@@ -143,7 +141,7 @@ export const projects: Project[] = [
     kind: "Small tool",
     year: "2026",
     summary: "Paste JSON and get an editable form, a table preview, TypeScript interfaces and React component code.",
-    details: ["A small React, TypeScript and Vite app. The generators have unit tests in Vitest."],
+    details: ["A React, TypeScript and Vite app. The generators have unit tests in Vitest."],
     stack: ["React", "TypeScript", "Vite", "Tailwind", "Vitest"],
     links: [
       { label: "Live tool", href: "https://json-ui-forge.andrii-maksymov-1.workers.dev" },
