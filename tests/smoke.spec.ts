@@ -40,7 +40,7 @@ test("renders the name, role and the four main actions", async ({ page }) => {
 
   const actions = page.getByRole("list", { name: "Contact and CV" });
   await expect(actions.getByRole("link", { name: /Download CV/ })).toHaveAttribute("href", "/Andrii_Maksymov_CV.pdf");
-  await expect(actions.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:andrii@andriim.dev");
+  await expect(actions.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:andrii.maksymov.1@gmail.com");
   await expect(actions.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", /linkedin\.com\/in\/maksymov-andrii/);
   await expect(actions.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", "https://github.com/andriimaksymov");
 });

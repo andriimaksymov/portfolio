@@ -64,7 +64,7 @@ All copy lives in `src/data/`. The source of truth is the current frontend CV, s
 
 - No em dashes, and none of these words: spearheaded, leveraged, utilized, synergy, passionate, results-driven, dynamic, cutting-edge, seamless, robust, innovative, delve, orchestrated, fostered, pivotal, testament, landscape, "proven track record".
 - Every number and claim must match the CV. Don't add facts that aren't in it.
-- Client work is text only. Name only aivo Revisions AG and Movadex; the Movadex SaaS stays unnamed. No screenshots or data from client products.
+- Client work is text only. Name only the clients and products the CV names (aivo Revisions AG, Movadex, Netcito, hope-platform.org). No screenshots or data from client products.
 - AI tools appear only together with the checks that keep them honest (tests, a separate review, lint and typecheck before merge).
 
 **CV:** replace `public/Andrii_Maksymov_CV.pdf` and keep the filename. Publish only the frontend CV.

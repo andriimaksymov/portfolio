@@ -2,7 +2,7 @@
  * Every type here backs something the page renders. If a field stops being
  * rendered, delete it: unread fields look like live copy and drift out of date.
  *
- * Source of truth for all copy: the frontend CV (CV_source.md, 2026-11-04).
+ * Source of truth for all copy: the frontend CV (CV_Frontend_source.md, 2026-11-20).
  * If a fact isn't in the CV or its evidence report, it doesn't go here.
  */
 

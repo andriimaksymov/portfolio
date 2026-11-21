@@ -4,8 +4,8 @@ import type { CaseStudy, Project } from "../types";
  * Selected work, strongest first.
  *
  * Client work (aivo, Movadex) is text only: no screenshots, data or UI.
- * aivo handles confidential client financial ledgers, and the Movadex SaaS
- * belongs to a client, so it stays unnamed.
+ * aivo handles confidential client financial ledgers, and Netcito belongs to a
+ * Movadex client. Name only what the CV names.
  * Personal projects carry real screenshots of their live sites.
  */
 export const caseStudies: CaseStudy[] = [
@@ -27,11 +27,11 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         label: "Strict TypeScript, no freeze",
-        text: "Took the 1,500-file app from 11% to 99% strict TypeScript in six milestones while features kept shipping, and ran the React 17 to 18 upgrade.",
+        text: "Took the app from 11% to 99% strict TypeScript in six milestones while features kept shipping, and ran the React 17 to 18 upgrade.",
       },
       {
         label: "Tests that check the figures",
-        text: "Wrote about 520 of the 620 test files and most of the Playwright end-to-end suite. The import spec had 170 assertions, and not one of them checked a figure. I added a test that compares every imported account total against an independent calculation.",
+        text: "Set up Playwright and wrote all but one of its end-to-end specs, plus over 80% of the frontend test files. The import spec had 170 assertions, and not one of them checked a figure. I added a test that compares every imported account total against an independent calculation.",
       },
       {
         label: "Server state and design system",
@@ -43,38 +43,38 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         label: "Performance and accessibility",
-        text: "Fixed an editor render loop that hit about 400 re-renders per second, and virtualized the ledger table. In CI, axe runs on every Storybook story; the known-failure list went from 513 to 489.",
+        text: "Fixed an editor render loop that hit about 400 re-renders per second, and virtualized the ledger table. In CI, axe checks every Storybook story, and a story that isn't on the known-failure list fails on any violation.",
       },
     ],
     metrics: [
-      { value: "11% → 99%", label: "strict TypeScript on a live 1,500-file app" },
-      { value: "~520 of 620", label: "test files written by me" },
+      { value: "11% → 99%", label: "strict TypeScript on a live app, no feature freeze" },
+      { value: "80%+", label: "of the frontend test files written by me" },
       { value: "31% → 67%", label: "measured test coverage, Jul–Oct 2026" },
-      { value: "500+", label: "merged PRs since June 2024, about half the repo's total" },
+      { value: "650+", label: "merged PRs, over half of the repo's total" },
     ],
-    stack: ["React 18", "TypeScript", "TanStack Query", "Zustand", "MUI", "Storybook", "Jest", "Playwright", "AWS Amplify"],
+    stack: ["React 18", "TypeScript", "TanStack Query", "Zustand", "MUI", "React Router", "Storybook", "Jest", "Playwright", "AWS Amplify"],
   },
   {
     id: "saas",
     title: "Founding frontend engineer on a multi-tenant SaaS",
     org: "Movadex",
     role: "Senior Frontend Engineer",
-    confidentiality: "Text only: a Movadex client's product, so it stays unnamed and there are no screenshots.",
+    confidentiality: "Text only: a Movadex client's product, so there are no screenshots.",
     context: [
-      "A peer-forum SaaS for business executives, built at Movadex for a client. I wrote the first commit and took it to production.",
+      "Netcito is a peer-forum SaaS for business executives, built at Movadex for a client. I wrote the first commit and took it to production.",
     ],
     points: [
       {
         label: "Ownership",
-        text: "Wrote over 90% of the 52k-line codebase: 733 commits and 185 of its 196 PRs, in React 19, strict TypeScript, Vite, Tailwind and TanStack Query.",
+        text: "Wrote 93% of its 52k lines of strict TypeScript.",
       },
       {
         label: "Product scope",
-        text: "13 product domains and 46 routes, including the super-admin panel, meeting-cycle forms, engagement analytics, a rich-text community feed and data import with row-level validation.",
+        text: "The super-admin panel, meeting-cycle forms, engagement analytics, a rich-text community feed and data import with row-level validation, plus Google sign-in and invite onboarding.",
       },
       {
         label: "Multi-tenancy",
-        text: "One deployment serves every tenant. I designed it with runtime tenant theming and per-tenant privacy rules.",
+        text: "One deployment serves every community. Each has its own branding, applied at runtime, and its own privacy level.",
       },
       {
         label: "API layer",
@@ -86,10 +86,10 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     metrics: [
-      { value: "90%+", label: "of the 52k-line codebase" },
-      { value: "185 of 196", label: "pull requests" },
-      { value: "46", label: "routes across 13 product domains" },
+      { value: "52k", label: "lines of TypeScript, first commit to production" },
+      { value: "93%", label: "of those lines written by me" },
       { value: "200+", label: "endpoints behind one typed API layer" },
+      { value: "3", label: "LLM providers behind one interface, with ordered fallback" },
     ],
     stack: ["React 19", "TypeScript", "Vite", "Tailwind", "TanStack Query"],
   },

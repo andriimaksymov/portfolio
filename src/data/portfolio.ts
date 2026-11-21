@@ -3,7 +3,7 @@ import type { About, Contact, Experience, Hero, Practice, Profile, SkillGroup } 
 /*
  * Copy rules (see README):
  * - Every fact comes from the frontend CV or its evidence report. No new numbers.
- * - Client work is text only. Name only aivo Revisions AG and Movadex.
+ * - Client work is text only. Name only the clients and products the CV names.
  * - Plain words. No em dashes. Read each line and ask whether it could sit on
  *   a thousand other sites; if yes, make it specific or cut it.
  */
@@ -12,7 +12,7 @@ export const profile: Profile = {
   name: "Andrii Maksymov",
   role: "Senior Frontend Engineer",
   stack: "React, TypeScript, Next.js",
-  email: "andrii@andriim.dev",
+  email: "andrii.maksymov.1@gmail.com",
   github: "https://github.com/andriimaksymov",
   linkedin: "https://www.linkedin.com/in/maksymov-andrii",
   website: "https://andriim.dev",
@@ -39,15 +39,16 @@ export const experiences: Experience[] = [
     period: "Jun 2024 – Present",
     location: "Remote",
     meta: [
-      "Part-time contract alongside my full-time Movadex role Jun 2024 – May 2026; main engagement since Jun 2026.",
+      "Full engagement since Jun 2026; part-time contract Jun 2024 – May 2026, alongside Movadex.",
     ],
     stack: {
       label: "Stack",
-      value: "React 18, TypeScript, TanStack Query, Zustand, MUI, Storybook, Jest, Playwright, AWS Amplify",
+      value: "React 18, TypeScript, TanStack Query, Zustand, MUI, React Router, Storybook, Jest, Playwright, AWS Amplify",
     },
     points: [
-      "Led the frontend of the data-analysis workspace, took the app from 11% to 99% strict TypeScript, and wrote ~520 of its 620 test files.",
-      "500+ merged PRs since June 2024, about half the repo's total. I own the frontend CI/CD (GitHub Actions, AWS Amplify) and wrote the testing and architecture docs plus three decision records (ADRs).",
+      "Led the frontend of the data-analysis workspace and took the app from 11% to 99% strict TypeScript. Set up Playwright, wrote all but one of its end-to-end specs, and wrote over 80% of the frontend test files.",
+      "Wrote the agent guides, two shared skills and the gate policy that AI-assisted work goes through. Test coverage rose from 31% to 67%.",
+      "650+ merged PRs, over half of the repo's total. I own the frontend CI/CD (GitHub Actions, AWS Amplify) and wrote the testing and architecture docs plus three decision records (ADRs).",
     ],
     caseStudyId: "aivo",
   },
@@ -56,7 +57,7 @@ export const experiences: Experience[] = [
     role: "Senior Frontend Engineer",
     company: "Movadex",
     companyNote: "product agency",
-    period: "May 2022 – Jun 2026",
+    period: "May 2022 – May 2026",
     location: "Remote",
     meta: ["Full-time."],
     stack: {
@@ -64,9 +65,9 @@ export const experiences: Experience[] = [
       value: "React 19, TypeScript, Next.js, Vite, Tailwind, MUI, TanStack Query, Zustand",
     },
     points: [
-      "Founding frontend engineer on a multi-tenant peer-forum SaaS for business executives, from first commit to production.",
-      "Sole frontend engineer on a humanitarian aid-logistics platform delivered in six months: role-based workflows, inventory, legal documents, maps and EN/UK localization.",
-      "Also a customer-facing analytics platform, a German-market Next.js SSR/SSG search site (Lighthouse 90+, LCP under 1 s) and an e-commerce site on the Next.js App Router with Payload CMS and Stripe.",
+      "Founding frontend engineer on Netcito, a multi-tenant peer-forum SaaS for business executives, from first commit to production. I wrote 93% of its 52k lines of TypeScript.",
+      "Sole frontend engineer on hope-platform.org, a humanitarian aid-logistics platform delivered in six months. Displaced people request aid, partner organizations and volunteers take requests and run events, and admins manage inventory, transfer acts and PDF aid reports. Three role-based cabinets, a regions map, EN/UK.",
+      "Also a customer-facing analytics platform, a German-market Next.js SSR/SSG search site (Lighthouse 90+, LCP under 1 s) and a Payload CMS and Stripe store on the Next.js App Router.",
       "Supported junior developers for a short period, sharing practices and helping them through their tasks.",
     ],
     caseStudyId: "saas",
@@ -106,15 +107,15 @@ export const practices: Practice[] = [
     id: "ai",
     title: "AI agents, under the same checks as my own code",
     paragraphs: [
-      "I use Claude Code and Codex every day. Their output goes through regression tests, a separate review pass, and lint and typecheck before anything merges, and I can defend every line that ships.",
-      "Each agent works in its own git worktree, and hooks keep client financial documents out of the model's context. On aivo, measured test coverage went from 31% to 67% between July and October 2026 while I worked this way.",
+      "I use Claude Code and Codex every day. Their output goes through the same gates as code I write by hand: tests on every commit, a light gate on each PR, and a full gate every night that records what ran. I can defend every line that ships.",
+      "On aivo I wrote the agent guides (AGENTS.md, CLAUDE.md, ARCHITECTURE.md), two shared skills and that gate policy. Agents work in parallel git worktrees. Measured test coverage went from 31% to 67% between July and October 2026 while I worked this way.",
     ],
   },
   {
     id: "quality",
     title: "Checks that ratchet",
     paragraphs: [
-      "On aivo I turned the quality rules into checks. The enforced coverage floor went from 28% to 64%, set a couple of points under the measured value and never lowered. Inline query keys are a lint error. axe runs on every Storybook story in CI, and the known-failure list went from 513 to 489.",
+      "On aivo I turned the quality rules into checks. The enforced coverage floor went from 28% to 64%, set a couple of points under the measured value and never lowered. Inline query keys are a lint error. axe checks every Storybook story in CI, and a story that isn't on the known-failure list fails on any violation.",
       "Decisions get written down: the testing and architecture docs are mine, and so are three of the repo's decision records (ADRs).",
     ],
   },
@@ -124,35 +125,27 @@ export const practices: Practice[] = [
 export const skillGroups: SkillGroup[] = [
   {
     name: "Frontend",
-    skills: ["TypeScript (strict)", "JavaScript", "React", "Next.js (App Router, React Server Components, SSR)", "HTML", "CSS"],
+    skills: ["TypeScript (strict)", "JavaScript", "React", "Next.js (App Router, SSR)", "React Router", "MUI", "Tailwind"],
   },
   {
-    name: "State management and data",
+    name: "State and data",
     skills: ["TanStack Query", "Zustand", "Redux Toolkit", "React Hook Form", "Zod", "REST", "WebSockets"],
   },
   {
-    name: "Testing",
-    skills: ["Jest", "Vitest", "React Testing Library", "Playwright", "Mock Service Worker (MSW)", "axe"],
-  },
-  {
-    name: "Quality",
-    skills: ["accessibility (WCAG 2.1 AA)", "performance (Core Web Vitals, virtualization)", "i18n", "Feature-Sliced Design"],
-  },
-  {
-    name: "UI and design systems",
-    skills: ["MUI (Material UI)", "Tailwind CSS", "shadcn/ui", "Storybook", "Figma tokens", "TanStack Table"],
+    name: "Testing and delivery",
+    skills: ["Jest", "Vitest", "React Testing Library", "Playwright", "axe (WCAG 2.1 AA)", "GitHub Actions"],
   },
   {
     name: "AI-assisted development",
-    skills: ["Claude Code and OpenAI Codex (daily)", "Cursor", "GitHub Copilot"],
+    skills: ["Claude Code", "Codex", "Cursor (parallel agents, custom skills, gate scripts)"],
   },
   {
-    name: "Build and delivery",
-    skills: ["Vite", "Webpack", "monorepos", "CI/CD (GitHub Actions)", "AWS Amplify", "Vercel"],
+    name: "AI features",
+    skills: ["LLM APIs (OpenAI, Gemini, Groq)", "multi-provider fallback", "Zod-validated structured output"],
   },
   {
     name: "Backend (working knowledge)",
-    skills: ["Node.js", "NestJS", "Express", "PostgreSQL", "Prisma", "Supabase", "LLM APIs"],
+    skills: ["Node.js", "NestJS", "Express", "PostgreSQL", "Prisma"],
   },
 ];
 
